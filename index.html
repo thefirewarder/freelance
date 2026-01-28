@@ -1,142 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Event snippet for Submit lead form conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-<script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-11533110779/9MpHCN7jve4bEPubtfsq',
-      'event_callback': callback
-  });
-  return false;
-}
-</script>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11533110779">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-11533110779');
-</script>
-  <title>JSDEV.ONE - Your one stop shop for all code freelancing</title>
-  <meta name="description" content="JSDEV.ONE is a site where anyone can get any coding projects done, without needing to know how to code at all.">
   <meta charset="UTF-8">
-  <title>JSDEV.ONE</title>
+  <title>JSDEV.ONE: Custom Code Projects Built for You</title>
+  <meta name="description" content="Get custom websites, tools, and games built for you fast. No coding needed. Start your project today with JSDEV.ONE.">
+
+  <!-- Google Ads -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11533110779"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-11533110779');
+
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+        'send_to': 'AW-11533110779/9MpHCN7jve4bEPubtfsq',
+        'event_callback': callback
+      });
+      return false;
+    }
+  </script>
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
     html, body {
       margin: 0;
       padding: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: black;
+      background: black;
       color: #00BFFF;
       text-align: center;
     }
 
-    body {
-      padding: 60px 20px;
-      line-height: 1.6;
-    }
+    body { padding: 60px 20px; }
 
     h1 {
       font-size: 4em;
-      margin-bottom: 0.3em;
       text-shadow: 0 0 15px #00BFFF;
+      margin-bottom: 0.2em;
     }
 
     h2 {
-      font-size: 1.8em;
+      font-size: 1.6em;
       font-weight: 400;
-      margin-bottom: 2em;
       color: #00BFFFAA;
+      max-width: 700px;
+      margin: 0 auto 1.5em;
     }
 
-    h3 {
-      font-size: 1.5em;
-      margin-top: 2em;
-      margin-bottom: 0.5em;
-    }
+    section { max-width: 700px; margin: 0 auto 3em; }
 
     ul {
       list-style: none;
       padding: 0;
-      margin: 0 auto 2em auto;
-      max-width: 500px;
-    }
-
-    ul li {
-      padding: 8px 0;
       font-size: 1.1em;
     }
 
-    p {
-      max-width: 600px;
-      margin: 0 auto 2em auto;
-    }
+    ul li { padding: 6px 0; }
 
     button {
       font-size: 1.3em;
-      padding: 20px 40px;
+      padding: 18px 38px;
       border: 2px solid #00BFFF;
-      border-radius: 20px;
-      background-color: black;
+      border-radius: 16px;
+      background: black;
       color: #00BFFF;
       cursor: pointer;
-      transition: all 0.3s ease;
-      margin: 2em auto;
-      display: block;
+      transition: 0.25s ease;
     }
 
     button:hover {
-      background-color: #00BFFF;
+      background: #00BFFF;
       color: black;
-      transform: scale(1.05);
       box-shadow: 0 0 25px #00BFFF;
+      transform: scale(1.05);
     }
 
-    footer {
-      margin-top: 50px;
-    }
+    .cta { margin-top: 40px; }
 
-    footer a {
-      color: #00BFFF;
-      text-decoration: none;
-      font-size: 1em;
-    }
+    footer { margin-top: 60px; font-size: 0.95em; }
+
+    footer a { color: #00BFFF; text-decoration: none; }
   </style>
 </head>
+
 <body>
 
   <h1>JSDEV.ONE</h1>
-  <h2>Custom coding projects coded exactly to your liking, no idea too big or too small.</h2>
+  <h2>I build custom websites, tools, and games for people who want results, not coding headaches.</h2>
 
-  <h3>What I build</h3>
-  <ul>
-    <li>Websites</li>
-    <li>Tools</li>
-    <li>Browser Games</li>
-    <li>Many other things, if you're not sure, just ask!</li>
-  </ul>
+  <section>
+    <h3>What I Can Build For You</h3>
+    <ul>
+      <li>✔️ Websites & landing pages</li>
+      <li>✔️ Browser games & fun projects</li>
+      <li>✔️ Custom tools & scripts</li>
+      <li>✔️ Ideas you’re not even sure how to explain yet</li>
+    </ul>
+  </section>
 
-  <h3>Why trust me?</h3>
-  <p>As a teen developer, I understand coding can be tricky. That's why I help people like you. I love coding things, but often don't have many original ideas. That's why I started JSDEV.ONE! I have been passionately coding for over 3 years, and I am glad to be helping you create something wonderful, because there's nothing like a newly coded web application!</p>
+  <section>
+    <h3>Why Work With Me?</h3>
+    <p>
+      I’ve been coding for 3+ years and I specialize in turning ideas into real, working projects.
+      You don’t even need to know how to code! Just tell me what you want and I’ll build it for you.
+      Fast communication. Honest pricing. No fluff.
+    </p>
+  </section>
 
-  <h3>What are you waiting for? Press the button below or click the "email me" link and I'll get back to you as soon as possible!</h3>
-<button onclick="gtag_report_conversion('https://docs.google.com/forms/d/1ylICFTzgSHqpK7cIC5uuHZ7PuSTpWzvsBs2z3ZC402U/viewform')">
-  Start Your Project
-</button>
+  <section>
+    <h3>Real People. Real Projects.</h3>
+    <p>
+      Students, creators, and small founders use JSDEV.ONE to bring ideas to life.
+      Every project is custom built and personally handled by me.
+    </p>
+  </section>
+
+  <div class="cta">
+    <h3>Ready to start your project?</h3>
+    <button onclick="gtag_report_conversion('https://docs.google.com/forms/d/1ylICFTzgSHqpK7cIC5uuHZ7PuSTpWzvsBs2z3ZC402U/viewform')">
+      🚀 Start Your Project Now
+    </button>
+    <p>It only takes 1 minute to submit your idea.</p>
+  </div>
 
   <footer>
-    <a href="mailto:maskedcuber4life@gmail.com">Email Me</a>
+    Or email me directly: <a href="mailto:maskedcuber4life@gmail.com">maskedcuber4life@gmail.com</a>
   </footer>
 
 </body>
