@@ -1,7 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
+<!-- Event snippet for Submit lead form conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-11533110779/9MpHCN7jve4bEPubtfsq',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11533110779">
 </script>
 <script>
@@ -115,7 +131,7 @@
   <p>As a teen developer, I understand coding can be tricky. That's why I help people like you. I love coding things, but often don't have many original ideas. That's why I started JSDEV.ONE! I have been passionately coding for over 3 years, and I am glad to be helping you create something wonderful, because there's nothing like a newly coded web application!</p>
 
   <h3>What are you waiting for? Press the button below or click the "email me" link and I'll get back to you as soon as possible!</h3>
-  <button onclick="window.open('https://docs.google.com/forms/d/1ylICFTzgSHqpK7cIC5uuHZ7PuSTpWzvsBs2z3ZC402U/viewform')">Start Your Project</button>
+  <button onclick="window.open('https://docs.google.com/forms/d/1ylICFTzgSHqpK7cIC5uuHZ7PuSTpWzvsBs2z3ZC402U/viewform'); gtag_report_conversion("URL")">Start Your Project</button>
 
   <footer>
     <a href="mailto:maskedcuber4life@gmail.com">Email Me</a>
