@@ -428,7 +428,7 @@ window.addEventListener("keydown",function(e){
   })
 function showTutorial(){
   alert(
-"ROAD RENEGADE\n\nYou are a criminal trying to escape the law."
+"ROAD RENEGADE\n\nWelcome! In this game, you are a criminal trying to escape the law."
 );
 
 alert(
