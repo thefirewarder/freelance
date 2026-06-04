@@ -12,6 +12,57 @@
     <title>Road Renegade</title>
 </head>
 <body>
+    <div id="setup">
+
+    <h1>ROAD RENEGADE</h1>
+
+    <p>
+        Escape across the United States while avoiding wanted states and
+        completing required detours.
+    </p>
+
+    <label>
+        Fuel Range
+        <select id="fuelSelect">
+            <option value="200">200 (Hard)</option>
+            <option value="300" selected>300 (Normal)</option>
+            <option value="400">400 (Easy)</option>
+            <option value="500">500 (Very Easy)</option>
+        </select>
+    </label>
+
+    <br><br>
+
+    <label>
+        Detours
+        <select id="detourSelect">
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+        </select>
+    </label>
+
+    <br><br>
+
+    <label>
+        Wanted States
+        <select id="blockedSelect">
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+        </select>
+    </label>
+
+    <br><br>
+
+    <button id="startBtn">
+        Start Escape
+    </button>
+
+</div>
   <p id="directions"></p>
   <button id="tutorialBtn" onclick="showTutorial()"> 
     How To Play
