@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+  zoom: 90%;
+}
+
+#map {
+    width: 100vw;
+    height: 100vh;
+}
+p{
+  color: white;
+}
