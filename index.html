@@ -69,7 +69,8 @@
   <button id="tutorialBtn" onclick="showTutorial()"> 
     How To Play
 </button><br><br>
-  <input id="cityInput" placeholder="Where to next?"><button id="enter">Enter</button>
+  <input id="cityInput" list="citySuggestions" placeholder="Where to next?"><button id="enter">Enter</button>
+    <datalist id="citySuggestions"></datalist>
     <div id="map"></div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
