@@ -219,8 +219,6 @@ generateGame();
 }
 
 function generateGame(){
-currentCity = choice1;
-otherCity = choice2;
 citiesVisited = [];
 detours = [];
 blocked = [];
@@ -269,6 +267,9 @@ choice2 =
         )
     ];
 
+currentCity = choice1;
+otherCity = choice2;
+    
 const startState =
     choice1.name.split(", ")[1];
 
