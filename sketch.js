@@ -81,21 +81,19 @@ cityInput.addEventListener(
 
 async function updateSuggestions(){
 
-      if(!choice1 || !choice2){
+    if(!choice1 || !choice2){
         return;
     }
-        
+
     if(!learningMode.checked){
         return;
     }
 
-    citySuggestions.innerHTML = "";
-
     const search =
-        cityInput.value
-            .trim();
+        cityInput.value.trim();
 
     if(search.length < 1){
+        citySuggestions.innerHTML = "";
         return;
     }
 
@@ -103,49 +101,91 @@ async function updateSuggestions(){
 
         const response =
             await fetch(
-                `https://secure.geonames.org/searchJSON?q=${encodeURIComponent(search)}&country=US&featureClass=P&maxRows=20&username=thefirewarder`
+                `https://secure.geonames.org/searchJSON?q=${encodeURIComponent(search)}&country=US&featureClass=P&maxRows=50&username=thefirewarder`
             );
 
         const data =
             await response.json();
 
+        if(!Array.isArray(data.geonames)){
+            return;
+        }
+
+        const candidates = [];
+
+        for(const city of data.geonames){
+
+            const lat =
+                parseFloat(city.lat);
+
+            const lon =
+                parseFloat(city.lng);
+
+            const distanceFromCurrent =
+                getDistance(
+                    currentCity.lat,
+                    currentCity.lon,
+                    lat,
+                    lon
+                );
+
+            const currentGap =
+                getDistance(
+                    currentCity.lat,
+                    currentCity.lon,
+                    otherCity.lat,
+                    otherCity.lon
+                );
+
+            const newGap =
+                getDistance(
+                    lat,
+                    lon,
+                    otherCity.lat,
+                    otherCity.lon
+                );
+
+            if(
+                distanceFromCurrent < reqDist &&
+                newGap < currentGap
+            ){
+
+                candidates.push({
+                    city,
+                    score:
+                        Math.abs(
+                            distanceFromCurrent -
+                            reqDist
+                        )
+                });
+
+            }
+
+        }
+
+        candidates.sort(
+            (a,b) =>
+                a.score -
+                b.score
+        );
+
         citySuggestions.innerHTML = "";
 
-        if(!Array.isArray(data.geonames)){
-    console.log(data);
-    return;
-}
-
-for(
-    const city of data.geonames
-){
+        for(
+            const candidate of candidates.slice(0,10)
+        ){
 
             const option =
                 document.createElement(
                     "option"
                 );
-            const proximity =
-    getDistance(
-        parseFloat(city.lat),
-        parseFloat(city.lng),
-        currentCity.lat,
-        currentCity.lon
-    );
-            const otherProximity = 
-                getDistance(
-                    otherCity.lat, otherCity.lon, currentCity.lat, currentCity.lon
-                )
-            const newProximity = 
-                getDistance(
-                    otherCity.lat, otherCity.lon, parseFloat(city.lat), parseFloat(city.lng)
-                )
+
             option.value =
-                city.name;
-            if(proximity < reqDist && proximity > reqDist / 2 && newProximity < otherProximity){
+                candidate.city.name;
+
             citySuggestions.appendChild(
                 option
             );
-            }
 
         }
 
@@ -600,7 +640,7 @@ getCityData(
         currentCity = newNode
         let closestOther = leftNetwork[0]
         for(const city1 of leftNetwork){
-            if(getDistance(city1.lat, newNode.lat, city.lon, newNode.lon) < getDistance(closestOther.lat, newNode.lat, closestOther.lon, newNode.lon))
+            if(getDistance(city1.lat, city.lon, newNode.lat, newNode.lon) < getDistance(closestOther.lat, closestOther.lon, newNode.lat, newNode.lon))
             closestOther = city1
         }
         otherCity = closestOther
