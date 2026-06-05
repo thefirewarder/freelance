@@ -81,6 +81,10 @@ cityInput.addEventListener(
 
 async function updateSuggestions(){
 
+      if(!choice1 || !choice2){
+        return;
+    }
+        
     if(!learningMode.checked){
         return;
     }
