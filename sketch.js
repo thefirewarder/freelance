@@ -254,16 +254,16 @@ directions.innerHTML =
 `
 
 Escape from ${choice1.name}
-and reach ${choice2.name}.<br>
+and reach ${choice2.name}. <br>
 
 
 
 
 Fuel Range:
-${reqDist} miles<br>
+${reqDist} miles <br>
 
 Required Detours:
-${detours.join(", ") || "None"}<br>
+${detours.join(", ") || "None"} <br>
 
 Wanted In:
 ${blocked.join(", ") || "None"}
