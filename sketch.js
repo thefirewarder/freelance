@@ -63,7 +63,9 @@ cityInput.addEventListener(
 );
 
 async function updateSuggestions(){
-
+if(!learning){
+    return
+}
     if(
         cityInput.value.length < 2
     ){
@@ -218,9 +220,6 @@ function startGame(){
 
 let learning = learningMode.checked;
 
-if(!learning){
-    return
-}
 reqDist =
     parseInt(
         document.getElementById(
