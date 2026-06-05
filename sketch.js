@@ -50,7 +50,10 @@ const majorCities = [
 {name:"Oklahoma City, OK",lat:35.481918,lon:-97.508469},
 {name:"Boston, MA",lat:42.361145,lon:-71.057083}
 ];
-
+window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 const citySuggestions =
     document.getElementById(
         "citySuggestions"
@@ -75,10 +78,6 @@ if(!learningMode.checked){
         return;
 
     }
-window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
     const response =
         await fetch(
             `https://nominatim.openstreetmap.org/search?city=${cityInput.value}&country=USA&format=json&limit=20`
