@@ -140,13 +140,6 @@ if(!learningMode.checked){
 
     }
 
-    data =
-        data.filter(
-            city =>
-                city.closestDistance <
-                reqDist
-        );
-
     data.sort(
         (
             a,
@@ -471,10 +464,9 @@ async function getCityData(
 cityName
 ){
 
-const response =
-    await fetch(
-        `https://nominatim.openstreetmap.org/search?city=${cityName}&country=USA&format=json`
-    );
+    const response = await fetch(
+    `https://nominatim.openstreetmap.org/search?q=${cityInput.value}&countrycodes=us&format=json&limit=50`
+);
 
 const data =
     await response.json();
