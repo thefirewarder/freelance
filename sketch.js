@@ -14,109 +14,7 @@ window.addEventListener(
 
     }
 );
-const cityDatabase = [
-"New York","Buffalo","Rochester","Syracuse","Albany",
 
-"Los Angeles","San Diego","San Jose","Sacramento","Fresno","Oakland","Bakersfield",
-
-"Houston","Dallas","Austin","San Antonio","El Paso","Lubbock","Corpus Christi",
-
-"Chicago","Springfield","Rockford","Peoria","Champaign",
-
-"Phoenix","Tucson","Flagstaff","Yuma","Mesa",
-
-"Philadelphia","Pittsburgh","Erie","Harrisburg","Allentown",
-
-"Columbus","Cleveland","Cincinnati","Toledo","Akron","Dayton",
-
-"Jacksonville","Miami","Tampa","Orlando","Tallahassee","Pensacola",
-
-"Atlanta","Savannah","Augusta","Macon","Athens",
-
-"Charlotte","Raleigh","Greensboro","Wilmington","Asheville",
-
-"Richmond","Virginia Beach","Roanoke","Charlottesville","Norfolk",
-
-"Nashville","Memphis","Knoxville","Chattanooga","Clarksville",
-
-"Louisville","Lexington","Bowling Green","Paducah",
-
-"Indianapolis","Fort Wayne","Evansville","South Bend",
-
-"Detroit","Grand Rapids","Lansing","Flint","Traverse City",
-
-"Milwaukee","Madison","Green Bay","La Crosse",
-
-"Minneapolis","Saint Paul","Duluth","Rochester",
-
-"Des Moines","Cedar Rapids","Davenport","Sioux City",
-
-"Kansas City","Saint Louis","Springfield","Columbia","Joplin",
-
-"Omaha","Lincoln","Grand Island","North Platte",
-
-"Wichita","Topeka","Salina","Dodge City",
-
-"Oklahoma City","Tulsa","Lawton","Enid",
-
-"Denver","Colorado Springs","Fort Collins","Pueblo","Grand Junction",
-
-"Cheyenne","Casper","Laramie","Gillette","Rock Springs",
-
-"Billings","Missoula","Bozeman","Great Falls","Helena",
-
-"Rapid City","Sioux Falls","Aberdeen","Pierre",
-
-"Fargo","Bismarck","Grand Forks","Minot",
-
-"Albuquerque","Santa Fe","Las Cruces","Roswell",
-
-"Salt Lake City","Provo","Ogden","Saint George",
-
-"Las Vegas","Reno","Carson City","Elko",
-
-"Boise","Idaho Falls","Pocatello","Twin Falls","Coeur d'Alene",
-
-"Seattle","Spokane","Tacoma","Olympia","Yakima",
-
-"Portland","Eugene","Salem","Bend","Medford",
-
-"Anchorage","Fairbanks","Juneau","Wasilla",
-
-"Honolulu","Hilo","Kailua","Kahului",
-
-"Little Rock","Fayetteville","Fort Smith","Jonesboro",
-
-"New Orleans","Baton Rouge","Lafayette","Shreveport",
-
-"Birmingham","Montgomery","Mobile","Huntsville","Tuscaloosa",
-
-"Jackson","Gulfport","Hattiesburg","Tupelo",
-
-"Charleston","Columbia","Greenville","Myrtle Beach",
-
-"Morgantown","Charleston","Huntington","Wheeling",
-
-"Portland","Bangor","Augusta","Lewiston",
-
-"Manchester","Nashua","Concord","Portsmouth",
-
-"Burlington","Montpelier","Rutland","Saint Albans",
-
-"Boston","Worcester","Springfield","Plymouth",
-
-"Providence","Newport","Warwick","Westerly",
-
-"Hartford","New Haven","Bridgeport","Stamford",
-
-"Newark","Jersey City","Trenton","Atlantic City",
-
-"Wilmington","Dover","Newark",
-
-"Washington","Georgetown",
-
-"Baltimore","Annapolis","Frederick"
-];
 history.scrollRestoration = "manual";
 const map = L.map("map").setView([39.5, -98.35], 4);
 
@@ -181,108 +79,56 @@ cityInput.addEventListener(
 );
 
 async function updateSuggestions(){
-if(!learningMode.checked){
-    return
-}
-    if(
-        cityInput.value.length < 1
-    ){
 
-        citySuggestions.innerHTML =
-            "";
-
+    if(!learningMode.checked){
         return;
-
     }
 
-    let data = cityDatabase
+    citySuggestions.innerHTML = "";
 
-    const allNetworkCities = [
-        ...leftNetwork,
-        ...rightNetwork
-    ];
+    const search =
+        cityInput.value
+            .trim();
 
-    for(
-        const city of data
-    ){
+    if(search.length < 1){
+        return;
+    }
 
-        const cityLat =
-            parseFloat(city.lat);
+    try{
 
-        const cityLon =
-            parseFloat(city.lon);
+        const response =
+            await fetch(
+                `https://secure.geonames.org/searchJSON?q=${encodeURIComponent(search)}&country=US&featureClass=P&maxRows=20&username=demo`
+            );
 
-        let closestDistance =
-            Infinity;
+        const data =
+            await response.json();
 
-        let closestCity =
-            "";
+        citySuggestions.innerHTML = "";
 
         for(
-            const node of allNetworkCities
+            const city of data.geonames
         ){
 
-            const d =
-                getDistance(
-                    cityLat,
-                    cityLon,
-                    node.lat,
-                    node.lon
+            const option =
+                document.createElement(
+                    "option"
                 );
 
-            if(
-                d <
-                closestDistance
-            ){
+            option.value =
+                city.name;
 
-                closestDistance =
-                    d;
-
-                closestCity =
-                    node.name;
-
-            }
+            citySuggestions.appendChild(
+                option
+            );
 
         }
 
-        city.closestDistance =
-            closestDistance;
-
-        city.closestCity =
-            closestCity;
-
     }
 
-    data.sort(
-        (
-            a,
-            b
-        ) =>
-            a.closestDistance -
-            b.closestDistance
-    );
+    catch(err){
 
-    citySuggestions.innerHTML =
-        "";
-
-    for(
-        const city of data
-    ){
-
-        const option =
-            document.createElement(
-                "option"
-            );
-
-        const parts =
-    city.display_name.split(",");
-
-option.value =
-    parts[0].trim();
-
-        citySuggestions.appendChild(
-            option
-        );
+        console.error(err);
 
     }
 
