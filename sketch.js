@@ -53,6 +53,132 @@ const majorCities = [
 {name:"Boston, MA",lat:42.361145,lon:-71.057083}
 ];
 
+const citySuggestions =
+    document.getElementById(
+        "citySuggestions"
+    );
+
+cityInput.addEventListener(
+    "input",
+    updateSuggestions
+);
+
+async function updateSuggestions(){
+
+    if(
+        cityInput.value.length < 2
+    ){
+
+        citySuggestions.innerHTML =
+            "";
+
+        return;
+
+    }
+
+    const response =
+        await fetch(
+            `https://nominatim.openstreetmap.org/search?city=${cityInput.value}&country=USA&format=json&limit=20`
+        );
+
+    let data =
+        await response.json();
+
+    const allNetworkCities = [
+        ...leftNetwork,
+        ...rightNetwork
+    ];
+
+    for(
+        const city of data
+    ){
+
+        const cityLat =
+            parseFloat(city.lat);
+
+        const cityLon =
+            parseFloat(city.lon);
+
+        let closestDistance =
+            Infinity;
+
+        let closestCity =
+            "";
+
+        for(
+            const node of allNetworkCities
+        ){
+
+            const d =
+                getDistance(
+                    cityLat,
+                    cityLon,
+                    node.lat,
+                    node.lon
+                );
+
+            if(
+                d <
+                closestDistance
+            ){
+
+                closestDistance =
+                    d;
+
+                closestCity =
+                    node.name;
+
+            }
+
+        }
+
+        city.closestDistance =
+            closestDistance;
+
+        city.closestCity =
+            closestCity;
+
+    }
+
+    data =
+        data.filter(
+            city =>
+                city.closestDistance <
+                reqDist
+        );
+
+    data.sort(
+        (
+            a,
+            b
+        ) =>
+            a.closestDistance -
+            b.closestDistance
+    );
+
+    citySuggestions.innerHTML =
+        "";
+
+    for(
+        const city of data
+    ){
+
+        const option =
+            document.createElement(
+                "option"
+            );
+
+        option.value =
+            city.display_name;
+
+        citySuggestions.appendChild(
+            option
+        );
+
+    }
+
+}
+
 if(!localStorage.getItem("roadRenegadePlayed")){
 
 showTutorial();
