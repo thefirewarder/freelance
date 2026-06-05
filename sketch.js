@@ -57,10 +57,12 @@ const citySuggestions =
         "citySuggestions"
     );
 
+if(learning){
 cityInput.addEventListener(
     "input",
     updateSuggestions
 );
+}
 
 async function updateSuggestions(){
 
