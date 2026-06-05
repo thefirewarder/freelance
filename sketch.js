@@ -53,14 +53,12 @@ const majorCities = [
 
 if(!localStorage.getItem("roadRenegadePlayed")){
 
-```
 showTutorial();
 
 localStorage.setItem(
     "roadRenegadePlayed",
     "true"
 );
-```
 
 }
 
@@ -78,19 +76,16 @@ window.addEventListener(
 "keydown",
 function(e){
 
-```
     if(e.key === "Enter"){
         clickHandler();
     }
 
 }
-```
 
 );
 
 function startGame(){
 
-```
 reqDist =
     parseInt(
         document.getElementById(
@@ -117,13 +112,11 @@ document.getElementById(
 ).style.display = "none";
 
 generateGame();
-```
 
 }
 
 function generateGame(){
 
-```
 citiesVisited = [];
 detours = [];
 blocked = [];
@@ -257,32 +250,25 @@ for(
 }
 
 directions.innerHTML =
-```
 
 `
 
-<h2>ROAD RENEGADE</h2>
+Escape from ${choice1.name}
+and reach ${choice2.name}.
 
-Escape from <b>${choice1.name}</b>
-and reach <b>${choice2.name}</b>.
 
-<br><br>
+
 
 Fuel Range:
 ${reqDist} miles
 
-<br>
-
 Required Detours:
 ${detours.join(", ") || "None"}
-
-<br>
 
 Wanted In:
 ${blocked.join(", ") || "None"}
 `;
 
-```
 startMarker =
     L.marker(
         [choice1.lat, choice1.lon]
@@ -299,7 +285,6 @@ endMarker =
 
 leftNetwork = [choice1];
 rightNetwork = [choice2];
-```
 
 }
 
@@ -310,7 +295,6 @@ lat2,
 lon2
 ){
 
-```
 const R = 3958.8;
 
 const dLat =
@@ -346,7 +330,6 @@ const c =
     );
 
 return R * c;
-```
 
 }
 
@@ -354,7 +337,6 @@ async function getCityData(
 cityName
 ){
 
-```
 const response =
     await fetch(
         `https://nominatim.openstreetmap.org/search?city=${cityName}&country=USA&format=json`
@@ -364,13 +346,11 @@ const data =
     await response.json();
 
 return data[0];
-```
 
 }
 
 function clickHandler(){
 
-```
 if(!choice1){
     return;
 }
@@ -579,7 +559,6 @@ getCityData(
             citiesVisited.length * 25;
 
         alert(
-```
 
 `ESCAPE SUCCESSFUL
 
@@ -593,19 +572,15 @@ Score: ${score}
 The authorities lost your trail.`
 );
 
-```
     }
 
 });
-```
 
 }
 
 function showTutorial(){
 
-```
 alert(
-```
 
 `ROAD RENEGADE
 
@@ -619,5 +594,4 @@ Visit all required detours.
 
 Use as few cities as possible for a higher score.`
 );
-
 }
