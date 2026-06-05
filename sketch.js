@@ -57,12 +57,10 @@ const citySuggestions =
         "citySuggestions"
     );
 
-if(learning){
 cityInput.addEventListener(
     "input",
     updateSuggestions
 );
-}
 
 async function updateSuggestions(){
 
@@ -219,7 +217,10 @@ function(e){
 function startGame(){
 
 let learning = learningMode.checked;
-    
+
+if(!learning){
+    return
+}
 reqDist =
     parseInt(
         document.getElementById(
