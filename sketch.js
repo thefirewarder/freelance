@@ -14,6 +14,7 @@ window.addEventListener(
 
     }
 );
+history.scrollRestoration = "manual";
 const map = L.map("map").setView([39.5, -98.35], 4);
 
 const directions = document.getElementById("directions");
