@@ -169,8 +169,11 @@ async function updateSuggestions(){
                 "option"
             );
 
-        option.value =
-            city.display_name;
+        const parts =
+    city.display_name.split(",");
+
+option.value =
+    parts[0].trim();
 
         citySuggestions.appendChild(
             option
