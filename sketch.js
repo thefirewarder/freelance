@@ -98,7 +98,7 @@ async function updateSuggestions(){
 
         const response =
             await fetch(
-                `https://secure.geonames.org/searchJSON?q=${encodeURIComponent(search)}&country=US&featureClass=P&maxRows=20&username=demo`
+                `https://secure.geonames.org/searchJSON?q=${encodeURIComponent(search)}&country=US&featureClass=P&maxRows=20&username=thefirewarder`
             );
 
         const data =
