@@ -6,7 +6,6 @@ const enter = document.getElementById("enter");
 const startBtn = document.getElementById("startBtn");
 const learningMode = document.getElementById("learningMode");
 
-}
 L.tileLayer(
 "https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png",
 {
