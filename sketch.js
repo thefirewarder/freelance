@@ -6,8 +6,6 @@ const enter = document.getElementById("enter");
 const startBtn = document.getElementById("startBtn");
 const learningMode = document.getElementById("learningMode");
 
-let learning = learningMode.checked;
-
 }
 L.tileLayer(
 "https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png",
@@ -90,6 +88,8 @@ function(e){
 
 function startGame(){
 
+let learning = learningMode.checked;
+    
 reqDist =
     parseInt(
         document.getElementById(
