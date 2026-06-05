@@ -17,7 +17,8 @@ window.addEventListener(
 
 history.scrollRestoration = "manual";
 const map = L.map("map").setView([39.5, -98.35], 4);
-
+let currentCity = null
+let otherCity = null
 const directions = document.getElementById("directions");
 const cityInput = document.getElementById("cityInput");
 const enter = document.getElementById("enter");
@@ -119,13 +120,16 @@ for(
                 document.createElement(
                     "option"
                 );
-
+            const proximity = getDistance(city.lat, currentCity.lat, city.lng, currentCity.lon)
+            const otherProximity = getDistance(otherCity.lat, currentCity.lat, otherCity.lon, courrentCity.lon)
+            const newProximity = getDistance(otherCity.lat, city.lat, otherCity.lon, city.lng)
             option.value =
                 city.name;
-
+            if(proximity < reqDist && proximity > reqDist / 1.5 && newProximity < otherProximity){
             citySuggestions.appendChild(
                 option
             );
+            }
 
         }
 
@@ -562,12 +566,26 @@ getCityData(
         leftNetwork.push(
             newNode
         );
+        currentCity = newNode
+        let closestOther = rightNetwork[0]
+        for(const city1 of rightNetwork){
+            if(getDistance(city1.lat, newNode.lat, city.lon, newNode.lon) < getDistance(closestOther.lat, newNode.lat, closestOther.lon, newNode.lon))
+            closestOther = city1
+        }
+        otherCity = closestOther
     }
 
     if(rightReachable){
         rightNetwork.push(
             newNode
         );
+        currentCity = newNode
+        let closestOther = leftNetwork[0]
+        for(const city1 of leftNetwork){
+            if(getDistance(city1.lat, newNode.lat, city.lon, newNode.lon) < getDistance(closestOther.lat, newNode.lat, closestOther.lon, newNode.lon))
+            closestOther = city1
+        }
+        otherCity = closestOther
     }
 
     citiesVisited.push(
