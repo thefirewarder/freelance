@@ -1,6 +1,19 @@
-window.onload = function(){
-    window.scrollTo(0, 0);
-};
+window.addEventListener(
+    "load",
+    function(){
+
+        setTimeout(
+            function(){
+                window.scrollTo(
+                    0,
+                    0
+                );
+            },
+            0
+        );
+
+    }
+);
 const map = L.map("map").setView([39.5, -98.35], 4);
 
 const directions = document.getElementById("directions");
@@ -68,7 +81,7 @@ if(!learningMode.checked){
     return
 }
     if(
-        cityInput.value.length < 2
+        cityInput.value.length < 1
     ){
 
         citySuggestions.innerHTML =
