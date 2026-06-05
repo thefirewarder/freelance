@@ -120,9 +120,21 @@ for(
                 document.createElement(
                     "option"
                 );
-            const proximity = getDistance(city.lat, currentCity.lat, city.lng, currentCity.lon)
-            const otherProximity = getDistance(otherCity.lat, currentCity.lat, otherCity.lon, currentCity.lon)
-            const newProximity = getDistance(otherCity.lat, city.lat, otherCity.lon, city.lng)
+            const proximity =
+    getDistance(
+        parseFloat(city.lat),
+        parseFloat(city.lng),
+        currentCity.lat,
+        currentCity.lon
+    );
+            const otherProximity = 
+                getDistance(
+                    otherCity.lat, otherCity.lon, currentCity.lat, currentCity.lon
+                )
+            const newProximity = 
+                getDistance(
+                    otherCity.lat, otherCity.lon, parseFloat(city.lat), parseFloat(city.lng)
+                )
             option.value =
                 city.name;
             if(proximity < reqDist && proximity > reqDist / 1.5 && newProximity < otherProximity){
