@@ -106,9 +106,14 @@ async function updateSuggestions(){
 
         citySuggestions.innerHTML = "";
 
-        for(
-            const city of data.geonames
-        ){
+        if(!Array.isArray(data.geonames)){
+    console.log(data);
+    return;
+}
+
+for(
+    const city of data.geonames
+){
 
             const option =
                 document.createElement(
