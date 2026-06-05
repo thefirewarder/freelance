@@ -1,3 +1,6 @@
+window.onload = function(){
+    window.scrollTo(0, 0);
+};
 const map = L.map("map").setView([39.5, -98.35], 4);
 
 const directions = document.getElementById("directions");
@@ -50,10 +53,6 @@ const majorCities = [
 {name:"Oklahoma City, OK",lat:35.481918,lon:-97.508469},
 {name:"Boston, MA",lat:42.361145,lon:-71.057083}
 ];
-window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
 const citySuggestions =
     document.getElementById(
         "citySuggestions"
