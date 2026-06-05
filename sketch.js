@@ -141,7 +141,7 @@ for(
                 )
             option.value =
                 city.name;
-            if(proximity < reqDist && proximity > reqDist / 1.5 && newProximity < otherProximity){
+            if(proximity < reqDist && proximity > reqDist / 2 && newProximity < otherProximity){
             citySuggestions.appendChild(
                 option
             );
@@ -587,7 +587,7 @@ getCityData(
         currentCity = newNode
         let closestOther = rightNetwork[0]
         for(const city1 of rightNetwork){
-            if(getDistance(city1.lat, newNode.lat, city1.lon, newNode.lon) < getDistance(closestOther.lat, newNode.lat, closestOther.lon, newNode.lon))
+            if(getDistance(city1.lat, city1.lon, newNode.lat, newNode.lon) < getDistance(closestOther.lat, closestOther.lon, newNode.lat, newNode.lon))
             closestOther = city1
         }
         otherCity = closestOther
