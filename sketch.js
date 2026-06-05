@@ -75,7 +75,10 @@ if(!learningMode.checked){
         return;
 
     }
-
+window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
     const response =
         await fetch(
             `https://nominatim.openstreetmap.org/search?city=${cityInput.value}&country=USA&format=json&limit=20`
@@ -234,10 +237,6 @@ console.log("START GAME CALLED")
 document.getElementById(
     "setup"
 ).style.display = "none";
- window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
 generateGame();
 
 }
