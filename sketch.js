@@ -237,7 +237,7 @@ blockedCt =
             "blockedSelect"
         ).value
     );
-
+console.log("START GAME CALLED")
 document.getElementById(
     "setup"
 ).style.display = "none";
