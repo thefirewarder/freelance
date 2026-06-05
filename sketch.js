@@ -219,7 +219,8 @@ generateGame();
 }
 
 function generateGame(){
-
+currentCity = choice1;
+otherCity = choice2;
 citiesVisited = [];
 detours = [];
 blocked = [];
