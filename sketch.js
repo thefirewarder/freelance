@@ -121,7 +121,7 @@ for(
                     "option"
                 );
             const proximity = getDistance(city.lat, currentCity.lat, city.lng, currentCity.lon)
-            const otherProximity = getDistance(otherCity.lat, currentCity.lat, otherCity.lon, courrentCity.lon)
+            const otherProximity = getDistance(otherCity.lat, currentCity.lat, otherCity.lon, currentCity.lon)
             const newProximity = getDistance(otherCity.lat, city.lat, otherCity.lon, city.lng)
             option.value =
                 city.name;
