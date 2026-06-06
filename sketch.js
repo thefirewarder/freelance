@@ -89,6 +89,8 @@ async function updateSuggestions(){
         return;
     }
 
+    
+    
     const search =
         cityInput.value.trim();
 
@@ -234,6 +236,10 @@ function(e){
 
 function startGame(){
 
+if(learningMode.checked){
+    gtag("event", "enabled_learning_mode")
+}
+    
 reqDist =
     parseInt(
         document.getElementById(
@@ -254,6 +260,17 @@ blockedCt =
             "blockedSelect"
         ).value
     );
+
+ gtag(
+        "event",
+        "game_started",
+     {
+         fuel: reqDist,
+         detours: detourCt,
+         wantedStates: blockedCt
+     }
+    )
+
 console.log("START GAME CALLED")
 document.getElementById(
     "setup"
@@ -637,6 +654,7 @@ getCityData(
         rightNetwork.push(
             newNode
         );
+        gtag("event","entered_city",{city: newNode.name})
         currentCity = newNode
         let closestOther = leftNetwork[0]
         for(const city1 of leftNetwork){
@@ -719,7 +737,7 @@ getCityData(
             detourCt * 150 +
             (400 - reqDist) * 2 -
             citiesVisited.length * 25;
-
+        gtag("event","game_won",{score: score, citiesVisited: citiesVisited.length})
         alert(
 
 `ESCAPE SUCCESSFUL
