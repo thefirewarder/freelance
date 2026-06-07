@@ -280,6 +280,7 @@ generateGame(tutorial);
 }
 
 function generateGame(tutorial){
+console.log(tutorial)
 citiesVisited = [];
 detours = [];
 blocked = [];
