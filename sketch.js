@@ -226,7 +226,8 @@ async function updateSuggestions(){
 
             const lon =
                 parseFloat(city.lng);
-
+            console.log(city);
+console.log(lat, lon);
             const distanceFromCurrent =
                 getDistance(
                     currentCity.lat,
