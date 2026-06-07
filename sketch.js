@@ -15,6 +15,13 @@ window.addEventListener(
     }
 );
 
+import {
+    auth,
+    db
+}
+from "./firebase.js";
+
+
 history.scrollRestoration = "manual";
 const googleBtn = document.getElementById("googleBtn")
 const map = L.map("map").setView([39.5, -98.35], 4);
