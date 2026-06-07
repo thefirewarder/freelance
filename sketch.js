@@ -123,6 +123,7 @@ document.getElementById("setup").style.display = "block";
     }
 );
 
+const statesVisited = []
 let collectingBounty = true
 const map = L.map("map").setView([39.5, -98.35], 4);
 let currentCity = null
@@ -758,6 +759,44 @@ getCityData(
     };
     cityInput.value = "";
     cityInput.focus();
+    if(!statesVisited.includes(city.adminName1)){
+        statesVisited.push(city.adminName1)
+        if(Math.random() < 0.025){
+            await updateDoc(
+                doc(
+                    db,
+                    "users",
+                    auth.currentUser.uid
+                ),
+                {
+                    artifactsFound: increment(1)
+                }
+            )
+            const snap = await getDoc(
+    doc(
+        db,
+        "users",
+        auth.currentUser.uid
+    )
+)
+
+userData = snap.data()
+if(userData.artifactsFound >= 15){
+    await updateDoc(
+                doc(
+                    db,
+                    "users",
+                    auth.currentUser.uid
+                ),
+                {
+                    artifactsFound: 0,
+                    bounty: increment(25000)
+                }
+            )
+    alert("Congratulations! You have completed a collection of artifacts, increasing your bounty by $25,000!")
+}
+        }
+    }
     if(leftReachable){
         leftNetwork.push(
             newNode
