@@ -277,7 +277,7 @@ async function updateSuggestions(){
         }
         candidates.sort(
     (a, b) => b.population - a.population
-)
+).slice(0,5)
         citySuggestions.innerHTML = "";
 
         for(
