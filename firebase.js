@@ -41,3 +41,46 @@ import {
     signInWithPopup
 }
 from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
+
+import {
+    doc,
+    setDoc
+}
+from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
+
+await setDoc(
+    doc(
+        db,
+        "users",
+        result.user.uid
+    ),
+    {
+        username:
+            result.user.displayName,
+
+        bounty: 0,
+
+        bestScore: 0
+    },
+    {
+        merge: true
+    }
+);
+
+await updateDoc(
+    doc(
+        db,
+        "users",
+        currentUser.uid
+    ),
+    {
+        bounty:
+            increment(score),
+
+        bestScore:
+            Math.max(
+                oldBest,
+                score
+            )
+    }
+);
