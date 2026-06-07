@@ -260,7 +260,7 @@ blockedCt =
             "blockedSelect"
         ).value
     );
-
+if(typeof gtag === "function"){
  gtag(
         "event",
         "game_started",
@@ -270,6 +270,7 @@ blockedCt =
          wantedStates: blockedCt
      }
     )
+}
 
 console.log("START GAME CALLED")
 document.getElementById(
@@ -660,7 +661,9 @@ getCityData(
         rightNetwork.push(
             newNode
         );
+        if(typeof gtag === "function"){
         gtag("event","entered_city",{city: newNode.name})
+        }
         currentCity = newNode
         let closestOther = leftNetwork[0]
         for(const city1 of leftNetwork){
@@ -743,7 +746,9 @@ getCityData(
             detourCt * 75 +
             (400 - reqDist) * 2 -
             citiesVisited.length * 25;
+        if(typeof gtag === "function"){
         gtag("event","game_won",{score: score, citiesVisited: citiesVisited.length})
+        }
         alert(
 
 `ESCAPE SUCCESSFUL
