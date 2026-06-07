@@ -733,8 +733,8 @@ getCityData(
 
         const score =
             1000 +
-            blockedCt * 200 +
-            detourCt * 150 +
+            blockedCt * 100 +
+            detourCt * 75 +
             (400 - reqDist) * 2 -
             citiesVisited.length * 25;
         gtag("event","game_won",{score: score, citiesVisited: citiesVisited.length})
