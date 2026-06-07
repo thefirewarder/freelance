@@ -32,10 +32,10 @@ snapshot.forEach(doc => {
   html += `<p>
     ${rank}.
     ${data.alias}
-    -
+    - Bounty:
     $${data.bounty.toLocaleString()}
     </p>
   `
   rank++
 })
-document.getElementById("leaderboard").innerHTML += html
+document.getElementById("leaderboard").innerHTML = html
