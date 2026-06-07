@@ -30,6 +30,11 @@ import {
 }
 from "./firebase.js";
 
+if(auth.currentUser){
+    document.getElementById("loginScreen").style.display = "none";
+    document.getElementById("setup").style.display = "block";
+}
+
 const game = document.getElementById("game")
 
 history.scrollRestoration = "manual";
