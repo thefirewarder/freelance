@@ -623,7 +623,7 @@ getCityData(
     ){
 
         alert(
-            "Too far away from both networks!"
+            "This city is outside of your fuel range. Try entering one closer to either end of your route!"
         );
 
         return;
