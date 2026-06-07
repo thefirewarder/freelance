@@ -18,7 +18,9 @@ import {
     getFirestore,
     doc,
     setDoc,
-    getDoc
+    getDoc,
+    updateDoc,
+    increment
 }
 from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
 import {
@@ -98,6 +100,7 @@ document.getElementById("setup").style.display = "block";
         document.getElementById("loginScreen").style.display = "none";
     }
 );
+
 const map = L.map("map").setView([39.5, -98.35], 4);
 let currentCity = null
 let otherCity = null
