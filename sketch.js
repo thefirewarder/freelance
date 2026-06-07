@@ -633,7 +633,7 @@ cityName
 const data =
     await response.json();
 
-return data[0];
+return data.geonames[0];
 
 }
 
