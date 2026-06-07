@@ -882,6 +882,16 @@ if(!collectingBounty){
 
     return;
 }
+else
+    const playAgain = confirm("Do you want to play again?")
+    document.getElementById("game").style.display = "none";
+    if(playAgain){
+        document.getElementById("setup").style.display = "block";
+    }
+    else{
+        document.getElementById("loginScreen").style.display = "block";
+    }
+}
     }
 
 });
