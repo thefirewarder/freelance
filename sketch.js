@@ -37,13 +37,9 @@ googleBtn.addEventListener(
             user.displayName
         );
 
-        document.getElementById(
-    "loginScreen"
-).style.display = "none";
+        document.getElementById("loginScreen").style.display = "none";
 
-document.getElementById(
-    "setup"
-).style.display = "block";
+document.getElementById("setup").style.display = "block";
     }
 );
 const map = L.map("map").setView([39.5, -98.35], 4);
@@ -266,13 +262,9 @@ function(e){
 
 function startGame(tutorial=false){
 
-document.getElementById(
-    "setup"
-).style.display = "none";
+document.getElementById("setup").style.display = "none";
 
-document.getElementById(
-    "game"
-).style.display = "block";
+document.getElementById("game").style.display = "block";
     
 if(learningMode.checked){
     gtag("event", "enabled_learning_mode")
