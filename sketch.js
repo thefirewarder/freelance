@@ -872,7 +872,15 @@ Score: ${score}
 The authorities lost your trail.`
 );
 if(!collectingBounty){
-document.getElementById("game").style.display = "none";
+
+    alert(
+        "Tutorial complete! Sign in to start earning bounty and rank on the Most Wanted leaderboard!"
+    );
+
+    document.getElementById("game").style.display = "none";
+    document.getElementById("loginScreen").style.display = "block";
+
+    return;
 }
     }
 
