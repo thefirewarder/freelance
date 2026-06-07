@@ -324,6 +324,10 @@ function startGame(tutorial=false){
 document.getElementById("setup").style.display = "none";
 
 document.getElementById("game").style.display = "block";
+
+setTimeout(() => {
+    map.invalidateSize();
+}, 100);
     
 if(learningMode.checked){
     gtag("event", "enabled_learning_mode")
