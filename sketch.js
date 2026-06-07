@@ -22,6 +22,7 @@ import {
 }
 from "./firebase.js";
 
+const game = document.getElementById("game")
 
 history.scrollRestoration = "manual";
 const googleBtn = document.getElementById("googleBtn")
@@ -35,6 +36,8 @@ googleBtn.addEventListener(
         console.log(
             user.displayName
         );
+
+        game.style.display = "block"
 
     }
 );
