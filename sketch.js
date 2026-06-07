@@ -90,9 +90,8 @@ else{
                 bestScore: 0
             }
         );
-
-       
-
+document.getElementById("aliasScreen").style.display = "none"
+document.getElementById("setup").style.display = "block";
     }
 );
         
