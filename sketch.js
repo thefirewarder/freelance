@@ -17,7 +17,8 @@ window.addEventListener(
 
 import {
     auth,
-    db
+    db,
+    login
 }
 from "./firebase.js";
 
