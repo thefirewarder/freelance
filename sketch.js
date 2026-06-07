@@ -234,7 +234,7 @@ function(e){
 
 );
 
-function startGame(){
+function startGame(tutorial=false){
 
 if(learningMode.checked){
     gtag("event", "enabled_learning_mode")
@@ -328,6 +328,11 @@ choice2 =
         )
     ];
 
+if(tutorial){
+    choice1 = {name:"New York, NY",lat:40.7128,lon:-74.0060}
+    choice2 = {name:"Boston, MA",lat:42.361145,lon:-71.057083}
+}
+    
 currentCity = choice1;
 otherCity = choice2;
     
@@ -742,7 +747,7 @@ getCityData(
 
 `ESCAPE SUCCESSFUL
 
-You escaped from ${choice1.name}
+You escaped from ${choice1.namxe}
 and reached ${choice2.name}.
 
 Cities visited: ${citiesVisited.length}
@@ -774,4 +779,6 @@ Visit all required detours.
 
 Use as few cities as possible for a higher score.`
 );
+alert("Let's try an example. Try entering 'Hartford', as it is between the two cities you will have to get between, 'New York' and 'Boston'. After this tutorial, you can always refresh to play again!")
+startGame(true)
 }
