@@ -123,7 +123,7 @@ document.getElementById("setup").style.display = "block";
     }
 );
 
-const statesVisited = []
+let statesVisited = []
 let collectingBounty = true
 const map = L.map("map").setView([39.5, -98.35], 4);
 let currentCity = null
@@ -341,6 +341,7 @@ function(e){
 );
 
 function startGame(tutorial=false){
+statesVisited = []
 document.getElementById("music").play()
 document.getElementById("setup").style.display = "none";
 
