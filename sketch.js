@@ -275,11 +275,11 @@ console.log("START GAME CALLED")
 document.getElementById(
     "setup"
 ).style.display = "none";
-generateGame();
+generateGame(tutorial);
 
 }
 
-function generateGame(){
+function generateGame(tutorial){
 citiesVisited = [];
 detours = [];
 blocked = [];
