@@ -761,7 +761,8 @@ getCityData(
         lat,
         lon
     };
-
+    cityInput.value = "";
+    cityInput.focus();
     if(leftReachable){
         leftNetwork.push(
             newNode
