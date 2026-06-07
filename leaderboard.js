@@ -29,12 +29,12 @@ let html = ""
 let rank = 1
 snapshot.forEach(doc => {
   const data = doc.data()
-  html += `<p>
+  html += `<h2>
     ${rank}.
     ${data.alias}
     - Bounty:
     $${data.bounty.toLocaleString()}
-    </p>
+    </h2>
   `
   rank++
 })
