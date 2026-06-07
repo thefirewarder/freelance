@@ -213,8 +213,8 @@ localStorage.setItem(
 }
 
 startBtn.addEventListener(
-"click",
-startGame
+    "click",
+    () => startGame(false)
 );
 
 enter.addEventListener(
