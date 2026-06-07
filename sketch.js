@@ -665,7 +665,7 @@ getCityData(
 
     const lon =
         parseFloat(
-            city.lon
+            city.lng
         );
 
     for(
