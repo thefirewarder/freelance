@@ -871,14 +871,12 @@ Score: ${score}
 
 The authorities lost your trail.`
 );
-
+if(!collectingBounty){
+document.getElementById("game").style.display = "none";
+}
     }
 
 });
-if(!collectingBounty){
-document.getElementById("game").style.display = "none";
-
-}
 }
 
 function showTutorial(){
