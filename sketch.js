@@ -663,7 +663,7 @@ getCityData(
         currentCity = newNode
         let closestOther = leftNetwork[0]
         for(const city1 of leftNetwork){
-            if(getDistance(city1.lat, city.lon, newNode.lat, newNode.lon) < getDistance(closestOther.lat, closestOther.lon, newNode.lat, newNode.lon))
+            if(getDistance(city1.lat, city1.lon, newNode.lat, newNode.lon) < getDistance(closestOther.lat, closestOther.lon, newNode.lat, newNode.lon))
             closestOther = city1
         }
         otherCity = closestOther
