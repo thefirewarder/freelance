@@ -747,7 +747,7 @@ getCityData(
 
 `ESCAPE SUCCESSFUL
 
-You escaped from ${choice1.namxe}
+You escaped from ${choice1.name}
 and reached ${choice2.name}.
 
 Cities visited: ${citiesVisited.length}
