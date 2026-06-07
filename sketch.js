@@ -159,8 +159,6 @@ let citiesVisited = [];
 let startMarker = null;
 let endMarker = null;
 
-document.getElementById("music").play()
-
 const cityMarkers = [];
 
 const majorCities = [
@@ -347,7 +345,7 @@ function(e){
 );
 
 function startGame(tutorial=false){
-
+document.getElementById("music").play()
 document.getElementById("setup").style.display = "none";
 
 document.getElementById("game").style.display = "block";
