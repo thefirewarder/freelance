@@ -673,9 +673,7 @@ getCityData(
     ){
 
         if(
-            city.display_name.includes(
-                state
-            )
+            city.adminName1 === state
         ){
 
             alert(
@@ -755,7 +753,7 @@ getCityData(
 
     const newNode = {
         name:
-            city.display_name,
+            city.name,
         lat,
         lon
     }
@@ -831,7 +829,7 @@ if(userData.artifactsFound >= 15){
     }
 
     citiesVisited.push(
-        city.display_name
+        city.name
     );
 
     cityInput.value = "";
@@ -842,7 +840,7 @@ if(userData.artifactsFound >= 15){
         )
         .addTo(map)
         .bindPopup(
-            city.display_name
+            city.name
         );
 
     cityMarkers.push(
