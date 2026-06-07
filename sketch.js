@@ -33,13 +33,64 @@ googleBtn.addEventListener(
         const user =
             await login();
 
-        console.log(
-            user.displayName
+        const userDoc =
+    await getDoc(
+        doc(
+            db,
+            "users",
+            user.uid
+        )
+    );
+
+if(userDoc.exists()){
+
+    document.getElementById("setup").style.display = "block";
+
+}
+else{
+
+    document.getElementById("aliasScreen").style.display = "block"
+
+}
+
+        createAliasBtn.addEventListener(
+    "click",
+    async function(){
+
+        const alias =
+            aliasInput.value.trim();
+
+        if(alias.length < 3){
+
+            alert(
+                "Alias must be at least 3 characters."
+            );
+
+            return;
+
+        }
+
+        await setDoc(
+            doc(
+                db,
+                "users",
+                auth.currentUser.uid
+            ),
+            {
+                alias,
+                bounty: 0,
+                gamesPlayed: 0,
+                gamesWon: 0,
+                bestScore: 0
+            }
         );
 
-        document.getElementById("loginScreen").style.display = "none";
+       
 
-document.getElementById("setup").style.display = "block";
+    }
+);
+        
+        document.getElementById("loginScreen").style.display = "none";
     }
 );
 const map = L.map("map").setView([39.5, -98.35], 4);
