@@ -38,3 +38,4 @@ snapshot.forEach(doc => {
   `
   rank++
 })
+document.getElementById("leaderboard").innerHTML += html
