@@ -111,9 +111,7 @@ else{
             {
                 alias,
                 bounty: 0,
-                gamesPlayed: 0,
-                gamesWon: 0,
-                bestScore: 0
+                artifactsFound: 0
             }
         );
 document.getElementById("aliasScreen").style.display = "none"
