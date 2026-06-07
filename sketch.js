@@ -101,6 +101,7 @@ document.getElementById("setup").style.display = "block";
     }
 );
 
+let collectingBounty = true
 const map = L.map("map").setView([39.5, -98.35], 4);
 let currentCity = null
 let otherCity = null
@@ -287,7 +288,7 @@ async function updateSuggestions(){
 }
 
 if(!localStorage.getItem("roadRenegadePlayed")){
-
+collectingBounty = false
 showTutorial();
 
 localStorage.setItem(
@@ -842,6 +843,7 @@ getCityData(
         if(typeof gtag === "function"){
         gtag("event","game_won",{score: score, citiesVisited: citiesVisited.length})
         }
+        if(collectingBounty){
         updateDoc(
     doc(
         db,
@@ -855,6 +857,7 @@ getCityData(
             )
     }
 );
+        }
         alert(
 
 `ESCAPE SUCCESSFUL
