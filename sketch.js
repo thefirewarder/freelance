@@ -25,6 +25,19 @@ from "./firebase.js";
 
 history.scrollRestoration = "manual";
 const googleBtn = document.getElementById("googleBtn")
+googleBtn.addEventListener(
+    "click",
+    async function(){
+
+        const user =
+            await login();
+
+        console.log(
+            user.displayName
+        );
+
+    }
+);
 const map = L.map("map").setView([39.5, -98.35], 4);
 let currentCity = null
 let otherCity = null
@@ -33,7 +46,6 @@ const cityInput = document.getElementById("cityInput");
 const enter = document.getElementById("enter");
 const startBtn = document.getElementById("startBtn");
 const learningMode = document.getElementById("learningMode");
-googleBtn.addEventListener("click",login)
 L.tileLayer(
 "https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png",
 {
