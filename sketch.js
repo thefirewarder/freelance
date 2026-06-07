@@ -627,7 +627,7 @@ cityName
 ){
 
     const response = await fetch(
-    `https://nominatim.openstreetmap.org/search?q=${cityInput.value}&countrycodes=us&format=json&limit=50`
+    `https://secure.geonames.org/searchJSON?q=${encodeURIComponent(cityName)}&country=US&featureClass=P&maxRows=1&username=thefirewarder`
 );
 
 const data =
@@ -762,8 +762,8 @@ getCityData(
     cityInput.value = "";
     cityInput.focus();
     console.log(city)
-    if(!statesVisited.includes(city.address.state)){
-        statesVisited.push(city.address.state)
+    if(!statesVisited.includes(city.adminName1)){
+        statesVisited.push(city.adminName1)
         if(Math.random() < 0.025){
             await updateDoc(
                 doc(
