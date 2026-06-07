@@ -30,10 +30,29 @@ import {
 }
 from "./firebase.js";
 
-if(auth.currentUser){
-    document.getElementById("loginScreen").style.display = "none";
-    document.getElementById("setup").style.display = "block";
+import {
+    onAuthStateChanged
 }
+from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
+
+onAuthStateChanged(
+    auth,
+    function(user){
+
+        if(user){
+
+            document.getElementById(
+                "loginScreen"
+            ).style.display = "none";
+
+            document.getElementById(
+                "setup"
+            ).style.display = "block";
+
+        }
+
+    }
+);
 
 const game = document.getElementById("game")
 
