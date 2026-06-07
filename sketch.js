@@ -760,8 +760,8 @@ getCityData(
     };
     cityInput.value = "";
     cityInput.focus();
-    if(!statesVisited.includes(city.adminName1)){
-        statesVisited.push(city.adminName1)
+    if(!statesVisited.includes(city.address.state)){
+        statesVisited.push(city.address.state)
         if(Math.random() < 0.025){
             await updateDoc(
                 doc(
