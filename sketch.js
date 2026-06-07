@@ -55,6 +55,7 @@ onAuthStateChanged(
 );
 
 const game = document.getElementById("game")
+const artifactBoard = document.getElementById("artifactBoard")
 
 history.scrollRestoration = "manual";
 const googleBtn = document.getElementById("googleBtn")
@@ -757,7 +758,7 @@ getCityData(
             city.display_name,
         lat,
         lon
-    };
+    }
     cityInput.value = "";
     cityInput.focus();
     if(!statesVisited.includes(city.address.state)){
@@ -782,6 +783,7 @@ getCityData(
 )
 
 userData = snap.data()
+artifactBoard.innerHTML = userData.artifactsFound + "/15. (Find all 15 to earn $25,000 bounty points)"
 if(userData.artifactsFound >= 15){
     await updateDoc(
                 doc(
