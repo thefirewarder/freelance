@@ -38,7 +38,7 @@ googleBtn.addEventListener(
         );
 
         game.style.display = "block"
-
+        googleBtn.style.display = "none"
     }
 );
 const map = L.map("map").setView([39.5, -98.35], 4);
