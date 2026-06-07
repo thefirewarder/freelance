@@ -94,17 +94,26 @@
     <audio id="music" loop>
         <source src="music1.mp3" type="audio/mpeg">
     </audio>
-    <h1>Road Renegade</h1>
+    <header>
 
-    <p>
-        Escape across the United States while avoiding wanted states and
-        completing required detours.
+    <h1>🚔 Road Renegade</h1>
+
+    <p class="tagline">
+        Escape across America by chaining together cities,
+        avoiding wanted states, and completing required detours.
     </p>
 
-    <a href="leaderboard.html">Most Wanted Leaderboard</a><br>
+    <a
+        class="leaderboardBtn"
+        href="leaderboard.html"
+    >
+        Most Wanted Leaderboard
+    </a>
+
+</header>
     <!-- LOGIN SCREEN -->
 
-    <div id="loginScreen">
+   <div id="loginScreen" class="card">
 
         <button id="googleBtn">
             Sign In With Google
@@ -112,7 +121,7 @@
 
     </div>
 
-    <div id="aliasScreen" style="display:none">
+    <div id="aliasScreen" class="card" style="display:none">
 
     <h2>Choose Your Alias</h2>
 
@@ -128,7 +137,7 @@
 </div>
     <!-- SETUP SCREEN -->
 
-    <div id="setup" style="display:none">
+    <div id="setup" class="card" tyle="display:none">
 
         <input
             type="checkbox"
@@ -183,7 +192,7 @@
 
     <!-- GAME SCREEN -->
 
-    <div id="game" style="display:none">
+    <div id="game" class="card" style="display:none">
 
         <div id="directions"></div>
 
