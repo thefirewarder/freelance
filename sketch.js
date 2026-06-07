@@ -761,6 +761,7 @@ getCityData(
     }
     cityInput.value = "";
     cityInput.focus();
+    console.log(city)
     if(!statesVisited.includes(city.address.state)){
         statesVisited.push(city.address.state)
         if(Math.random() < 0.025){
