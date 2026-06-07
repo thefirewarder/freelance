@@ -764,6 +764,7 @@ getCityData(
     if(!statesVisited.includes(city.adminName1)){
         statesVisited.push(city.adminName1)
         if(Math.random() < 0.025){
+            alert("You found an artifact! Buy maps to find them faster!")
             await updateDoc(
                 doc(
                     db,
