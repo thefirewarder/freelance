@@ -11,3 +11,7 @@ body {
 #setup{
     padding:20px;
 }
+#googleBtn{
+border-radius: 15px;
+padding: 20px;
+}
