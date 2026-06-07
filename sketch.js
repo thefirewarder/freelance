@@ -644,7 +644,7 @@ if(!choice1){
 
 getCityData(
     cityInput.value
-).then(city => {
+).then(async city => {
 
     if(!city){
 
