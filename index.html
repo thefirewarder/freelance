@@ -17,7 +17,7 @@
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
     <link rel="stylesheet" href="style.css">
-      <title>Road Renegade - Free US Geography Route Planning Game</title>
+      <title>Road Renegade - Free US Geography Route Planning </title>
     <meta
 name="description"
 content="Escape across the United States by connecting cities, avoiding wanted states, and completing detours in this free browser geography game."
@@ -26,16 +26,14 @@ content="Escape across the United States by connecting cities, avoiding wanted s
      crossorigin="anonymous"></script>
 </head>
 <body>
-
+<button id="googleBtn">Sign In With Google</button>
     <div id="setup">
 
-
+<div id="game" style="display:none">
     <p>
         Escape across the United States while avoiding wanted states and
         completing required detours.
     </p>
-        <div id="game" style="display:none">
-        <button id="googleBtn">Sign In With Google</button>
     <input type="checkbox" id="learningMode">Learning Mode (Receive autocomplete help, showing where the nearest cities are that match what you have typed in the input box)</label><br><br>
     <label>
         Fuel Range
@@ -78,7 +76,6 @@ content="Escape across the United States by connecting cities, avoiding wanted s
         Start Escape
     </button>
 
-    </div>
   <p id="directions"></p>
   <button id="tutorialBtn" onclick="showTutorial()"> 
     How To Play
@@ -98,6 +95,7 @@ Road Renegade is a free geography game where players must travel across the Unit
     <a href="contact.html">Contact</a> |
     <a href="privacy-policy.html">Privacy Policy</a>
 </footer>
+</div>
 </div>
 </body>
 </html>
