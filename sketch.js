@@ -159,6 +159,8 @@ let citiesVisited = [];
 let startMarker = null;
 let endMarker = null;
 
+document.getElementById("music").play()
+
 const cityMarkers = [];
 
 const majorCities = [
