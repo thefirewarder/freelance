@@ -194,12 +194,6 @@ async function updateSuggestions(){
     if(!choice1 || !choice2){
         return;
     }
-
-    if(!learningMode.checked){
-        return;
-    }
-
-    
     
     const search =
         cityInput.value.trim();
@@ -274,13 +268,16 @@ async function updateSuggestions(){
             }
 
         }
-
+        if(learningMode.checked){
         candidates.sort(
             (a,b) =>
                 a.score -
                 b.score
-        );
-
+        )
+        }
+        candidates.sort(
+    (a, b) => b.population - a.population
+)
         citySuggestions.innerHTML = "";
 
         for(
