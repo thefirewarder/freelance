@@ -882,7 +882,7 @@ if(!collectingBounty){
 
     return;
 }
-else
+else{
     const playAgain = confirm("Do you want to play again?")
     document.getElementById("game").style.display = "none";
     if(playAgain){
