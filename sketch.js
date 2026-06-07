@@ -112,7 +112,8 @@ else{
             {
                 alias,
                 bounty: 0,
-                artifactsFound: 0
+                artifactsFound: 0,
+                treasureMaps: 0
             }
         );
 document.getElementById("aliasScreen").style.display = "none"
