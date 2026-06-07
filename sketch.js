@@ -875,7 +875,10 @@ The authorities lost your trail.`
     }
 
 });
+if(!collectingBounty){
+document.getElementById("game").style.display = "none";
 
+}
 }
 
 function showTutorial(){
