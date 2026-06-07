@@ -1,102 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7LY11Q5N0B"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-7LY11Q5N0B');
-</script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-
-    <link rel="stylesheet" href="style.css">
-      <title>Road Renegade - Free US Geography Route Planning </title>
-    <meta
-name="description"
-content="Escape across the United States by connecting cities, avoiding wanted states, and completing detours in this free browser geography game."
->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2129073346993901"
-     crossorigin="anonymous"></script>
-</head>
 <body>
+
     <h1>Road Renegade</h1>
+
     <p>
         Escape across the United States while avoiding wanted states and
         completing required detours.
     </p>
-<button id="googleBtn">Sign In With Google</button>
-    <div id="setup">
 
-<div id="game" style="display:none">
-    <input type="checkbox" id="learningMode">Learning Mode (Receive autocomplete help, showing where the nearest cities are that match what you have typed in the input box)</label><br><br>
-    <label>
-        Fuel Range
-        <select id="fuelSelect">
-            <option value="200">200 (Hard)</option>
-            <option value="300" selected>300 (Normal)</option>
-            <option value="400">400 (Easy)</option>
-            <option value="500">500 (Very Easy)</option>
-        </select>
-    </label>
+    <!-- LOGIN SCREEN -->
 
-    <br><br>
+    <div id="loginScreen">
 
-    <label>
-        Detours
-        <select id="detourSelect">
-            <option>0</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-        </select>
-    </label>
+        <button id="googleBtn">
+            Sign In With Google
+        </button>
 
-    <br><br>
+    </div>
 
-    <label>
-        Wanted States
-        <select id="blockedSelect">
-            <option>0</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-        </select>
-    </label>
+    <!-- SETUP SCREEN -->
 
-    <br><br>
+    <div id="setup" style="display:none">
 
-    <button id="startBtn">
-        Start Escape
-    </button>
+        <input
+            type="checkbox"
+            id="learningMode"
+        >
+        Learning Mode
 
-  <p id="directions"></p>
-  <button id="tutorialBtn" onclick="showTutorial()"> 
-    How To Play
-</button><br><br>
-  <input id="cityInput" list="citySuggestions" placeholder="Where to next?"><button id="enter">Enter</button>
-    <datalist id="citySuggestions"></datalist>
-    <div id="map"></div>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <h2>What is Road Renegade?</h2>
-<p>
-Road Renegade is a free geography game where players must travel across the United States by building a chain of cities within a limited fuel range.
-</p>
-    <script type="module" src="sketch.js"></script>
-    <script type="module" src="firebase.js"></script>
-  <footer>
-    <a href="about.html">About</a> |
-    <a href="contact.html">Contact</a> |
-    <a href="privacy-policy.html">Privacy Policy</a>
-</footer>
-</div>
-</div>
+        <br><br>
+
+        <label>
+            Fuel Range
+            <select id="fuelSelect">
+                <option value="200">200 (Hard)</option>
+                <option value="300" selected>300 (Normal)</option>
+                <option value="400">400 (Easy)</option>
+                <option value="500">500 (Very Easy)</option>
+            </select>
+        </label>
+
+        <br><br>
+
+        <label>
+            Detours
+            <select id="detourSelect">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
+        </label>
+
+        <br><br>
+
+        <button id="startBtn">
+            Start Escape
+        </button>
+
+    </div>
+
+    <!-- GAME SCREEN -->
+
+    <div id="game" style="display:none">
+
+        <div id="directions"></div>
+
+        <input
+            id="cityInput"
+            list="citySuggestions"
+        >
+
+        <datalist id="citySuggestions"></datalist>
+
+        <button id="enter">
+            Enter City
+        </button>
+
+        <div id="map"></div>
+
+    </div>
+
 </body>
-</html>
