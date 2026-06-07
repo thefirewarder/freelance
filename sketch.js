@@ -835,7 +835,7 @@ getCityData(
         if(typeof gtag === "function"){
         gtag("event","game_won",{score: score, citiesVisited: citiesVisited.length})
         }
-        await updateDoc(
+        updateDoc(
     doc(
         db,
         "users",
