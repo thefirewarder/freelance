@@ -371,7 +371,7 @@ function(e){
 
 function startGame(tutorial=false){
 if(tutorial){
-    guestBtn.style.display = "none"
+    guestBtn.hidden = true
 }
 statesVisited = []
 document.getElementById("music").play()
@@ -997,7 +997,7 @@ if(!collectingBounty){
     alert(
         "Tutorial complete! Sign in to start earning bounty and rank on the Most Wanted leaderboard!"
     );
-    guestBtn.hidden = true
+    guestBtn.hidden = false
     document.getElementById("game").style.display = "none";
     document.getElementById("loginScreen").style.display = "block";
 
