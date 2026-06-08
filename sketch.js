@@ -404,7 +404,7 @@ console.log("START GAME CALLED")
 document.getElementById(
     "setup"
 ).style.display = "none";
-(tutorial);
+generateGame(tutorial);
 
 }
 
