@@ -34,7 +34,7 @@ import {
     onAuthStateChanged
 }
 from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
-
+const developerMode = false
 onAuthStateChanged(
     auth,
     function(user){
@@ -81,7 +81,6 @@ googleBtn.addEventListener(
             user.uid
         )
     );
-const developerMode = false
 if(userDoc.exists()){
 
     document.getElementById("setup").style.display = "block";
