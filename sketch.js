@@ -832,15 +832,14 @@ userData = snap.data()
         }
         otherCity = closestOther
     }
-
+let leftCoords = leftNetwork.map(city2 => [city2.lat, city2.lon])
+    let rightCoords = rightNetwork.map(city2 => [city2.lat, city2.lon])
+    leftLine = L.polyline(leftCoords,{color: "red"}).addTo(map)
+    rightLine = L.polyline(rightCoords,{color: "blue"}).addTo(map)
     if(rightReachable){
         rightNetwork.push(
             newNode
         );
-    let leftCoords = leftNetwork.map(city2 => [city2.lat, city2.lon])
-    let rightCoords = rightNetwork.map(city2 => [city2.lat, city2.lon])
-    leftLine = L.polyline(leftCoords,{color: "red"}).addTo(map)
-    rightLine = L.polyline(rightCoords,{color: "blue"}).addTo(map)
         if(typeof gtag === "function"){
         gtag("event","entered_city",{city: newNode.name})
         }
