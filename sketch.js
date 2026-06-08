@@ -131,6 +131,9 @@ document.getElementById("setup").style.display = "block";
 
 let regGamesPlayed = Number(localStorage.getItem("regGames")) || 0
 let guestBtn = document.getElementById("guestBtn")
+ if(regGamesPlayed > 1){
+        guestBtn.style.display = "none"
+    }
 guestBtn.addEventListener("click",function(){
     regGamesPlayed++
     localStorage.setItem("regGames", regGamesPlayed.toString())
@@ -143,9 +146,6 @@ guestBtn.addEventListener("click",function(){
             document.getElementById(
                 "setup"
             ).style.display = "block";
-    }
-    else if(regGamesPlayed > 2){
-        guestBtn.style.display = "none"
     }
     startGame()
 })
