@@ -370,6 +370,9 @@ function(e){
 );
 
 function startGame(tutorial=false){
+if(tutorial){
+    guestBtn.style.display = "none"
+}
 statesVisited = []
 document.getElementById("music").play()
 document.getElementById("setup").style.display = "none";
