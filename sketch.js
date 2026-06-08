@@ -972,8 +972,6 @@ Cities visited: ${citiesVisited.length}
 Score: ${score}
 
 The authorities lost your trail.`
-)
-    },750);
 if(!collectingBounty){
 
     alert(
@@ -995,6 +993,7 @@ else{
         document.getElementById("loginScreen").style.display = "block";
     }
 }
+},750);
     }
 
 });
