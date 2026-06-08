@@ -54,7 +54,6 @@ onAuthStateChanged(
 );
 let map = null
 let currentCityMarker = null;
-const developerMode = false
 const car = L.icon({
     iconUrl: "car.png",
     iconSize: [25, 41],
@@ -361,7 +360,7 @@ setTimeout(() => {
     map.invalidateSize();
 }, 100);
     
-if(learningMode.checked && !developerMode){
+if(learningMode.checked){
     gtag("event", "enabled_learning_mode")
 }
     
@@ -385,7 +384,7 @@ blockedCt =
             "blockedSelect"
         ).value
     );
-if(typeof gtag === "function" && !developerMode){
+if(typeof gtag === "function"){
  gtag(
         "event",
         "game_started",
@@ -851,7 +850,7 @@ userData = snap.data()
         rightNetwork.push(
             newNode
         );
-        if(typeof gtag === "function" && !developerMode){
+        if(typeof gtag === "function"){
         gtag("event","entered_city",{city: newNode.name})
         }
         currentCity = newNode
@@ -940,7 +939,7 @@ let leftCoords = leftNetwork.map(city2 => [city2.lat, city2.lon])
             detourCt * 75 +
             (400 - reqDist) * 2 -
             citiesVisited.length * 25;
-        if(typeof gtag === "function" && !developerMode){
+        if(typeof gtag === "function"){
         gtag("event","game_won",{score: score, citiesVisited: citiesVisited.length})
         }
         if(collectingBounty){
