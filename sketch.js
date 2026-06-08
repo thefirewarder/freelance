@@ -404,11 +404,20 @@ console.log("START GAME CALLED")
 document.getElementById(
     "setup"
 ).style.display = "none";
-generateGame(tutorial);
+(tutorial);
 
 }
 
 function generateGame(tutorial){
+    if(leftLine){
+    map.removeLayer(leftLine);
+    leftLine = null;
+}
+
+if(rightLine){
+    map.removeLayer(rightLine);
+    rightLine = null;
+}
 console.log(tutorial)
 citiesVisited = [];
 detours = [];
