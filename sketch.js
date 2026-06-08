@@ -959,6 +959,7 @@ let leftCoords = leftNetwork.map(city2 => [city2.lat, city2.lon])
     }
 );
         }
+    setTimeout(function(
         alert(
 
 `ESCAPE SUCCESSFUL
@@ -971,7 +972,8 @@ Cities visited: ${citiesVisited.length}
 Score: ${score}
 
 The authorities lost your trail.`
-);
+)
+),750);
 if(!collectingBounty){
 
     alert(
