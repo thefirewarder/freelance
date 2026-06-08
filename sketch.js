@@ -973,7 +973,7 @@ Cities visited: ${citiesVisited.length}
 
 Score: ${score}
 
-The authorities lost your trail.`
+The authorities lost your trail.`);
 if(!collectingBounty){
 
     alert(
