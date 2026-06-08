@@ -56,7 +56,7 @@ onAuthStateChanged(
 
 
 const game = document.getElementById("game")
-
+let routeLine = null
 history.scrollRestoration = "manual";
 const googleBtn = document.getElementById("googleBtn")
 googleBtn.addEventListener(
@@ -113,7 +113,7 @@ else{
                 alias,
                 bounty: 0,
                 artifactsFound: 0,
-                treasureMaps: 0
+                treasures: 0
             }
         );
 document.getElementById("aliasScreen").style.display = "none"
@@ -759,6 +759,12 @@ getCityData(
         lat,
         lon
     }
+    if(leftLine){
+        map.removeLayer(leftLine)
+    }
+    if(rightLine){
+        map.removeLayer(rightLine)
+    }
     cityInput.value = "";
     cityInput.focus();
     console.log(city)
@@ -803,6 +809,10 @@ userData = snap.data()
         rightNetwork.push(
             newNode
         );
+    let leftCoords = leftNetwork.map(city2 => [city2.lat, city2.lon])
+    let rightCoords = rightNetwork.map(city2 => [city2.lat, city2.lon])
+    leftLine = L.polyline(leftCoords,{color: red}).addTo(map)
+    rightLine = L.polyline(rightCoords,{color: blue}).addTo(map)
         if(typeof gtag === "function"){
         gtag("event","entered_city",{city: newNode.name})
         }
@@ -825,7 +835,7 @@ userData = snap.data()
         L.marker(
             [lat, lon]
         )
-        .addTo(map)
+        .addTo()
         .bindPopup(
             city.name
         );
