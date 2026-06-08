@@ -573,7 +573,7 @@ Wanted In:
 ${blocked.join(", ") || "None"}
 `;
 
-startMarker =
+startMarker 
     L.marker(
         [choice1.lat, choice1.lon]
     )
@@ -858,6 +858,7 @@ let leftCoords = leftNetwork.map(city2 => [city2.lat, city2.lon])
 
     cityInput.value = "";
 
+    if(city !== currentCity){
     const marker =
         L.marker(
             [lat, lon]
@@ -866,10 +867,10 @@ let leftCoords = leftNetwork.map(city2 => [city2.lat, city2.lon])
         .bindPopup(
             city.name
         );
-
     cityMarkers.push(
         marker
     );
+    }
 
     const detoursReached =
         detours.every(
