@@ -55,6 +55,14 @@ onAuthStateChanged(
 );
 
 let map = null
+let currentCityMarker = null;
+
+const car = L.icon({
+    iconUrl: "car.png",
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34]
+});
 const game = document.getElementById("game")
 let routeLine = null
 history.scrollRestoration = "manual";
@@ -416,7 +424,10 @@ if(startMarker){
 if(endMarker){
     map.removeLayer(endMarker);
 }
-
+if(currentCityMarker){
+    map.removeLayer(currentCityMarker);
+    currentCityMarker = null;
+}
 while(cityMarkers.length > 0){
 
     map.removeLayer(
@@ -761,6 +772,21 @@ getCityData(
         lat,
         lon
     }
+    if(currentCityMarker){
+    map.removeLayer(currentCityMarker);
+}
+
+currentCityMarker =
+    L.marker(
+        [lat, lon],
+        {
+            icon: greenIcon
+        }
+    )
+    .addTo(map)
+    .bindPopup(
+        city.name
+    );
     if(leftLine){
         map.removeLayer(leftLine)
     }
@@ -837,7 +863,7 @@ userData = snap.data()
         L.marker(
             [lat, lon]
         )
-        .addTo()
+        .addTo(map)
         .bindPopup(
             city.name
         );
