@@ -13,7 +13,7 @@ a{
 #setup{
     padding:20px;
 }
-#googleBtn{
+#googleBtn, #guestBtn{
 border-radius: 15px;
 padding: 20px;
 }
