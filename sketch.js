@@ -663,7 +663,9 @@ cityName
 
 const data =
     await response.json();
-
+data.geonames.sort(
+    (a, b) => b.population - a.population
+);
 return data.geonames[0];
 
 }
