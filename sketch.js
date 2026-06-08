@@ -137,6 +137,13 @@ guestBtn.addEventListener("click",function(){
     if(regGamesPlayed >= 2){
         guestBtn.style.display = "none"
         alert("This is your last game as a guest! Sign up to rank on our leaderboard and save your scores!")
+        document.getElementById(
+                "loginScreen"
+            ).style.display = "none";
+
+            document.getElementById(
+                "setup"
+            ).style.display = "block";
     }
     startGame()
 })
@@ -364,7 +371,6 @@ function startGame(tutorial=false){
 statesVisited = []
 document.getElementById("music").play()
 document.getElementById("setup").style.display = "none";
-
 document.getElementById("game").style.display = "block";
 
 setTimeout(() => {
