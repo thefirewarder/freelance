@@ -373,6 +373,9 @@ function startGame(tutorial=false){
 if(tutorial){
     guestBtn.hidden = true
 }
+else{
+    collectingBounty = true
+}
 statesVisited = []
 document.getElementById("music").play()
 document.getElementById("setup").style.display = "none";
