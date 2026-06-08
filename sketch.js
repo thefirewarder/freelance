@@ -134,8 +134,7 @@ let guestBtn = document.getElementById("guestBtn")
 guestBtn.addEventListener("click",function(){
     regGamesPlayed++
     localStorage.setItem("regGames", regGamesPlayed.toString())
-    if(regGamesPlayed >= 2){
-        guestBtn.style.display = "none"
+    if(regGamesPlayed === 2){
         alert("This is your last game as a guest! Sign up to rank on our leaderboard and save your scores!")
         document.getElementById(
                 "loginScreen"
@@ -144,6 +143,9 @@ guestBtn.addEventListener("click",function(){
             document.getElementById(
                 "setup"
             ).style.display = "block";
+    }
+    else if(regGamesPlayed > 2){
+        guestBtn.style.display = "none"
     }
     startGame()
 })
