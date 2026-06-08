@@ -834,19 +834,6 @@ getCityData(
 )
 
 userData = snap.data()
-if(userData.artifactsFound >= 15){
-    await updateDoc(
-                doc(
-                    db,
-                    "users",
-                    auth.currentUser.uid
-                ),
-                {
-                    artifactsFound: 0,
-                    bounty: increment(25000)
-                }
-            )
-}
         }
     }
     if(leftReachable){
