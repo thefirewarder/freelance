@@ -34,7 +34,6 @@ import {
     onAuthStateChanged
 }
 from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
-const developerMode = false
 onAuthStateChanged(
     auth,
     function(user){
@@ -55,7 +54,7 @@ onAuthStateChanged(
 );
 let map = null
 let currentCityMarker = null;
-
+const developerMode = false
 const car = L.icon({
     iconUrl: "car.png",
     iconSize: [25, 41],
