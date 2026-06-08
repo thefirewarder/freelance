@@ -831,7 +831,7 @@ currentCityMarker =
     )
 )
 
-userData = snap.data()
+let userData = snap.data()
         }
     }
     if(leftReachable){
