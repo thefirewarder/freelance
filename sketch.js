@@ -409,7 +409,22 @@ document.getElementById(
 }
 
 function generateGame(tutorial){
-    if(leftLine){
+console.log(tutorial)
+citiesVisited = [];
+detours = [];
+blocked = [];
+
+leftNetwork = [];
+rightNetwork = [];
+if(startMarker){
+    map.removeLayer(startMarker);
+}
+
+if(endMarker){
+    map.removeLayer(endMarker);
+}
+
+if(leftLine){
     map.removeLayer(leftLine);
     leftLine = null;
 }
@@ -418,14 +433,6 @@ if(rightLine){
     map.removeLayer(rightLine);
     rightLine = null;
 }
-console.log(tutorial)
-citiesVisited = [];
-detours = [];
-blocked = [];
-
-leftNetwork = [];
-rightNetwork = [];
-
 if(startMarker){
     map.removeLayer(startMarker);
 }
