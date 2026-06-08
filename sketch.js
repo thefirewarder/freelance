@@ -9,7 +9,7 @@ window.addEventListener(
                     0
                 );
             },
-            0
+            
         );
 
     }
@@ -54,7 +54,7 @@ onAuthStateChanged(
     }
 );
 
-
+let map = null
 const game = document.getElementById("game")
 let routeLine = null
 history.scrollRestoration = "manual";
@@ -129,7 +129,7 @@ let leftLine = null
 let rightLine = null
 let statesVisited = []
 let collectingBounty = true
-const map = L.map("map").setView([39.5, -98.35], 4);
+map = L.map("map").setView([39.5, -98.35], 4);
 let currentCity = null
 let otherCity = null
 const directions = document.getElementById("directions");
