@@ -81,9 +81,7 @@ googleBtn.addEventListener(
             user.uid
         )
     );
-const developerMode =
-    auth.currentUser?.uid ===
-    "bua32rgK2rPVG6ASGKxB6zAqB2Z2";
+const developerMode = false
 if(userDoc.exists()){
 
     document.getElementById("setup").style.display = "block";
