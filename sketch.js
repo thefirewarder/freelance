@@ -138,7 +138,7 @@ guestBtn.addEventListener("click",function(){
     regGamesPlayed++
     localStorage.setItem("regGames", regGamesPlayed.toString())
     if(regGamesPlayed === 2){
-        alert("This is your last game as a guest! Continue as a guest to keep playing normally or sign up to rank on our leaderboard and save your scores!")
+        alert("This is your last game as a guest! Sign up to rank on our leaderboard and save your scores!")
     }
     document.getElementById(
                 "loginScreen"
@@ -995,7 +995,7 @@ The authorities lost your trail.`);
 if(!collectingBounty){
 
     alert(
-        "Tutorial complete! Sign in to start earning bounty and rank on the Most Wanted leaderboard!"
+        "Tutorial complete! Continue as a guest to keep playing normally or sign in to start earning bounty and rank on the Most Wanted leaderboard!"
     );
     guestBtn.hidden = false
     document.getElementById("game").style.display = "none";
