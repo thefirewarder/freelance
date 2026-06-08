@@ -573,7 +573,7 @@ Wanted In:
 ${blocked.join(", ") || "None"}
 `;
 
-startMarker 
+startMarker =
     L.marker(
         [choice1.lat, choice1.lon]
     )
