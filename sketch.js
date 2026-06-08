@@ -857,7 +857,7 @@ let leftCoords = leftNetwork.map(city2 => [city2.lat, city2.lon])
 
     cityInput.value = "";
 
-    if(city !== currentCity){
+    if(lat !== currentCity.lat || lon !== currentCity.lon){
     const marker =
         L.marker(
             [lat, lon]
