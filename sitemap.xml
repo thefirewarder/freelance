@@ -19,4 +19,8 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <loc>https://jsdev.one/privacy.html</loc>
   </url>
 
+   <url>
+    <loc>https://jsdev.one/leaderboard.html</loc>
+  </url>
+
 </urlset>
