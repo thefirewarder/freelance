@@ -780,7 +780,7 @@ currentCityMarker =
     L.marker(
         [lat, lon],
         {
-            icon: greenIcon
+            icon: car
         }
     )
     .addTo(map)
