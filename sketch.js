@@ -139,14 +139,14 @@ guestBtn.addEventListener("click",function(){
     localStorage.setItem("regGames", regGamesPlayed.toString())
     if(regGamesPlayed === 2){
         alert("This is your last game as a guest! Sign up to rank on our leaderboard and save your scores!")
-        document.getElementById(
+    }
+    document.getElementById(
                 "loginScreen"
             ).style.display = "none";
 
             document.getElementById(
                 "setup"
             ).style.display = "block";
-    }
     startGame()
 })
 let leftLine = null
