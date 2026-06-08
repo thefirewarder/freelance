@@ -832,10 +832,6 @@ userData = snap.data()
         }
         otherCity = closestOther
     }
-let leftCoords = leftNetwork.map(city2 => [city2.lat, city2.lon])
-    let rightCoords = rightNetwork.map(city2 => [city2.lat, city2.lon])
-    leftLine = L.polyline(leftCoords,{color: "red"}).addTo(map)
-    rightLine = L.polyline(rightCoords,{color: "blue"}).addTo(map)
     if(rightReachable){
         rightNetwork.push(
             newNode
@@ -851,7 +847,10 @@ let leftCoords = leftNetwork.map(city2 => [city2.lat, city2.lon])
         }
         otherCity = closestOther
     }
-
+let leftCoords = leftNetwork.map(city2 => [city2.lat, city2.lon])
+    let rightCoords = rightNetwork.map(city2 => [city2.lat, city2.lon])
+    leftLine = L.polyline(leftCoords,{color: "red"}).addTo(map)
+    rightLine = L.polyline(rightCoords,{color: "blue"}).addTo(map)
     citiesVisited.push(
         city.name
     );
