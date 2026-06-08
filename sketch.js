@@ -129,6 +129,17 @@ document.getElementById("setup").style.display = "block";
     }
 );
 
+let regGamesPlayed = Number(localStorage.getItem("regGames")) || 0
+let guestBtn = document.getElementById("guestBtn")
+guestBtn.addEventListener("click",function(){
+    regGamesPlayed++
+    localStorage.setItem("regGames", regGamesPlayed.toString())
+    if(regGamesPlayed >= 2){
+        guestBtn.style.display = "none"
+        alert("This is your last game as a guest! Sign up to rank on our leaderboard and save your scores!")
+    }
+    startGame()
+})
 let leftLine = null
 let rightLine = null
 let statesVisited = []
