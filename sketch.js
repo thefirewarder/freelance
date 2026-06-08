@@ -997,7 +997,7 @@ if(!collectingBounty){
     alert(
         "Tutorial complete! Sign in to start earning bounty and rank on the Most Wanted leaderboard!"
     );
-    guestBtn.style.display="block"
+    guestBtn.hidden = true
     document.getElementById("game").style.display = "none";
     document.getElementById("loginScreen").style.display = "block";
 
