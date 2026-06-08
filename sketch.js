@@ -53,7 +53,6 @@ onAuthStateChanged(
 
     }
 );
-
 let map = null
 let currentCityMarker = null;
 
@@ -82,7 +81,9 @@ googleBtn.addEventListener(
             user.uid
         )
     );
-
+const developerMode =
+    auth.currentUser?.uid ===
+    "bua32rgK2rPVG6ASGKxB6zAqB2Z2";
 if(userDoc.exists()){
 
     document.getElementById("setup").style.display = "block";
@@ -364,7 +365,7 @@ setTimeout(() => {
     map.invalidateSize();
 }, 100);
     
-if(learningMode.checked){
+if(learningMode.checked && !developerMode){
     gtag("event", "enabled_learning_mode")
 }
     
@@ -388,7 +389,7 @@ blockedCt =
             "blockedSelect"
         ).value
     );
-if(typeof gtag === "function"){
+if(typeof gtag === "function" && !developerMode){
  gtag(
         "event",
         "game_started",
@@ -854,7 +855,7 @@ userData = snap.data()
         rightNetwork.push(
             newNode
         );
-        if(typeof gtag === "function"){
+        if(typeof gtag === "function" && !developerMode){
         gtag("event","entered_city",{city: newNode.name})
         }
         currentCity = newNode
@@ -943,7 +944,7 @@ let leftCoords = leftNetwork.map(city2 => [city2.lat, city2.lon])
             detourCt * 75 +
             (400 - reqDist) * 2 -
             citiesVisited.length * 25;
-        if(typeof gtag === "function"){
+        if(typeof gtag === "function" && !developerMode){
         gtag("event","game_won",{score: score, citiesVisited: citiesVisited.length})
         }
         if(collectingBounty){
