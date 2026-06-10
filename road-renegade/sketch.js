@@ -1027,9 +1027,8 @@ const archiveAmount = Math.max(
         40 - routeBounty / 50
     )
 )
+})
 }
-},750);
-    }
 
 });
 }
