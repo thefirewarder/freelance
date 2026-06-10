@@ -34,6 +34,11 @@ import {
     onAuthStateChanged
 }
 from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
+import {
+    collection,
+    addDoc
+}
+from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
 onAuthStateChanged(
     auth,
     function(user){
@@ -1015,6 +1020,15 @@ else{
     else{
         document.getElementById("loginScreen").style.display = "block";
     }
+}
+const archiveAmount = Math.max(
+    1,
+    Math.floor(
+        40 - routeBounty / 50
+    )
+)
+if(confirm("Archive this route for "+archiveAmount+" extra bounty?"){
+
 }
 },750);
     }
