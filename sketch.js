@@ -967,7 +967,7 @@ let leftCoords = leftNetwork.map(city2 => [city2.lat, city2.lon])
         if(typeof gtag === "function"){
         gtag("event","game_won",{score: score, citiesVisited: citiesVisited.length})
         }
-        if(collectingBounty){
+        if(collectingBounty  && auth.currentUser){
         updateDoc(
     doc(
         db,
