@@ -1,97 +1,102 @@
-body {
-    margin: 0;
-  zoom: 90%;
-}
-
-#map {
-    width: 100vw;
-    height: 100vh;
-}
-a{
-    margin-right: 20px;
-}
-#setup{
-    padding:20px;
-}
-#googleBtn, #guestBtn{
-border-radius: 15px;
-padding: 20px;
-}
-
-html{
-    background-color: #f1e9d2;
-}
-
-:root{
-    --bg: #f4efe3;
-    --panel: #fffaf0;
-    --border: #4a3f35;
-
-    --primary: #8b2f2f;
-    --secondary: #2d4f6c;
-
-    --text: #222;
-    --success: #2e7d32;
-}
-
 body{
-    background: var(--bg);
-    color: var(--text);
-    font-family: Arial, sans-serif;
 
     margin: 0;
-    padding: 20px;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #1e293b
+        );
+
+    color: white;
+
+    font-family:
+        system-ui,
+        sans-serif;
+
 }
 
-.container{
-    max-width: 1200px;
-    margin: auto;
-}
+main{
 
-header{
+    width: min(
+        800px,
+        90%
+    );
+
     text-align: center;
-    margin-bottom: 25px;
+
+    padding: 50px;
+
 }
 
 h1{
-    font-size: 3rem;
-    margin-bottom: 5px;
+
+    margin: 0;
+
+    font-size: 4rem;
+
+    font-weight: 800;
+
 }
 
-.tagline{
-    font-size: 1.1rem;
-    color: #555;
+p{
+
+    font-size: 1.25rem;
+
+    line-height: 1.6;
+
+    color: #cbd5e1;
+
 }
 
 button{
-    background: var(--primary);
-    color: white;
+
+    margin-top: 20px;
+
+    padding:
+        16px
+        32px;
 
     border: none;
-    border-radius: 8px;
 
-    padding: 12px 20px;
+    border-radius: 12px;
 
-    font-size: 1rem;
+    background: white;
+
+    color: #0f172a;
+
+    font-size: 1.1rem;
+
     font-weight: bold;
 
     cursor: pointer;
 
-    transition: 0.2s;
+    transition:
+        transform 0.15s,
+        box-shadow 0.15s;
+
 }
 
 button:hover{
-    transform: translateY(-2px);
-    opacity: 0.9;
-}
 
-.card{
-    background: var(--panel);
+    transform:
+        translateY(-2px);
 
-    border: 2px solid var(--border);
+    box-shadow:
+        0 10px 30px rgba(
+            0,
+            0,
+            0,
+            0.3
+        );
 
-    border-radius: 12px;
-
-    padding: 20px;
-    margin-bottom: 20px;
 }

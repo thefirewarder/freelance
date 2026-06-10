@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>(function(s){s.dataset.zone='11125898',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Road Renegade - Free US Geography Route Planning Game
+    </title>
+
+    <meta
+        name="description"
+        content="Escape across the United States by connecting cities, avoiding wanted states, and completing required detours in this free browser geography game."
+    >
+
+    <!-- Open Graph -->
+
+    <meta
+        property="og:title"
+        content="Road Renegade"
+    >
+
+    <meta
+        property="og:description"
+        content="Can you escape across America while avoiding wanted states?"
+    >
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <!-- Styles -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <!-- Leaflet -->
+
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    ></script>
+
+    <!-- Google Analytics -->
+
+    <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-7LY11Q5N0B"
+    ></script>
+
+    <script>
+
+        window.dataLayer =
+            window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag(
+            "js",
+            new Date()
+        );
+
+        gtag(
+            "config",
+            "G-7LY11Q5N0B"
+        );
+
+    </script>
+
+    <!-- AdSense -->
+
+    <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2129073346993901"
+        crossorigin="anonymous"
+    ></script>
+
+</head>
+<body>
+    <audio id="music" loop>
+        <source src="music1.mp3" type="audio/mpeg">
+    </audio>
+    <header>
+
+    <h1>🚔 Road Renegade</h1>
+
+    <p class="tagline">
+        Escape across America by chaining together cities,
+        avoiding wanted states, and completing required detours.
+    </p>
+        
+    <a
+        class="leaderboardBtn"
+        href="leaderboard.html"
+    >
+        Most Wanted Leaderboard
+    </a>
+
+     <p><strong>
+    Want your own custom Wanted Poster that goes on the leaderboard, whether you rank on it or not?
+        </strong>
+    </p>
+    <button onclick="window.location.href='https://roadrenegade.gumroad.com/l/wanted-poster?wanted=true'">Buy One!</button>
+
+        
+</header>
+    <!-- LOGIN SCREEN -->
+   <div id="loginScreen" class="card">
+        <button id="guestBtn">Continue as Guest</button>
+        <button id="googleBtn">
+            Sign In With Google
+        </button>
+
+    </div>
+
+    <div id="aliasScreen" class="card" style="display:none">
+
+    <h2>Choose Your Alias</h2>
+
+    <input
+        id="aliasInput"
+        maxlength="20"
+    >
+
+    <button id="createAliasBtn">
+        Become a Renegade
+    </button>
+
+</div>
+    <!-- SETUP SCREEN -->
+
+    <div id="setup" class="card" style="display:none">
+
+        <input
+            type="checkbox"
+            id="learningMode"
+        >
+        Learning Mode
+
+        <br><br>
+
+        <label>
+            Fuel Range
+            <select id="fuelSelect">
+                <option value="200">200 (Hard)</option>
+                <option value="300" selected>300 (Normal)</option>
+                <option value="400">400 (Easy)</option>
+                <option value="500">500 (Very Easy)</option>
+            </select>
+        </label>
+
+        <br><br>
+    
+        <label>
+            Detours
+            <select id="detourSelect">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
+        </label>
+
+        <br><br>
+
+<label>
+    Wanted States
+    <select id="blockedSelect">
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+    </select>
+</label>
+
+        <br><br>
+        
+        <button id="startBtn">
+            Begin Pursuit
+        </button>
+
+    </div>
+
+    <!-- GAME SCREEN -->
+
+    <div id="game" class="card" style="display:none">
+
+        <div id="directions"></div>
+        <input
+            id="cityInput"
+            list="citySuggestions"
+        >
+        <datalist id="citySuggestions"></datalist>
+
+        <button id="enter">
+            Drive to City
+        </button>
+
+        <div id="map"></div>
+
+    </div>
+       <footer>
+           <a href="about.html">About Road Renegade</a>
+           <a href="privacy-policy.html">Privacy Policy</a>
+           <a href="contact.html">Contact the developer</a>
+       </footer>
+</body>
+
+    <script type="module"src="sketch.js"></script>
+    <script type="module" src="firebase.js"></script>
+</html>

@@ -8,19 +8,23 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   </url>
 
   <url>
-    <loc>https://jsdev.one/about.html</loc>
+    <loc>https://jsdev.one/road-renegade/play.html</loc>
   </url>
 
   <url>
-    <loc>https://jsdev.one/contact.html</loc>
+    <loc>https://jsdev.one/road-renegade/about.html</loc>
   </url>
 
   <url>
-    <loc>https://jsdev.one/privacy.html</loc>
+    <loc>https://jsdev.one/road-renegade/contact.html</loc>
+  </url>
+
+  <url>
+    <loc>https://jsdev.one/road-renegade/privacy.html</loc>
   </url>
 
    <url>
-    <loc>https://jsdev.one/leaderboard.html</loc>
+    <loc>https://jsdev.one/road-renegade/leaderboard.html</loc>
   </url>
 
 </urlset>
