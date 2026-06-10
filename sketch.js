@@ -1027,8 +1027,6 @@ const archiveAmount = Math.max(
         40 - routeBounty / 50
     )
 )
-if(confirm("Archive this route for "+archiveAmount+" extra bounty?"){
-
 }
 },750);
     }
