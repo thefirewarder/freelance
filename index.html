@@ -14,14 +14,15 @@
 
     <meta
         name="description"
-        content="Play Road Renegade, a free browser geography game."
+        content="Free browser games, coding projects, experiments, and interactive experiences built by JSDev."
     >
 
     <link
         rel="stylesheet"
         href="style.css"
     >
- <script
+
+    <script
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-7LY11Q5N0B"
     ></script>
@@ -46,44 +47,88 @@
         );
 
     </script>
-    <!-- AdSense -->
 
     <script
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2129073346993901"
         crossorigin="anonymous"
     ></script>
+
 </head>
 <body>
 
     <main>
 
         <h1>
-            Road Renegade
+            JSDev
         </h1>
 
         <p>
-            Escape across the United States by connecting cities,
-            avoiding wanted states, and completing required detours.
+            Independent browser games, coding projects,
+            and interactive experiments.
         </p>
 
-        <button id="mainBtn"
+        <button
+            id="playBtn"
             onclick="
                 location.href=
                 '/road-renegade/play.html'
             "
         >
-            Play Now
+            Play Road Renegade
+        </button>
+
+        <button
+            id="applyBtn"
+            onclick="
+                location.href='https://forms.gle/CL2D1GBYFt7cgzEj8'
+            "
+        >
+            Join The Team
         </button>
 
         <p>
-            A free browser geography game.
+            Interested in testing games, making dev art,
+            sharing ideas, or helping shape future projects?
+            We'd love to hear from you.
         </p>
+
         <script>
-            document.getElementById("mainBtn").addEventListener("click",function(){
-                gtag("event","entered_road_renegade")
-            })
+
+            document
+                .getElementById(
+                    "playBtn"
+                )
+                .addEventListener(
+                    "click",
+                    function(){
+
+                        gtag(
+                            "event",
+                            "entered_road_renegade"
+                        );
+
+                    }
+                );
+
+            document
+                .getElementById(
+                    "applyBtn"
+                )
+                .addEventListener(
+                    "click",
+                    function(){
+
+                        gtag(
+                            "event",
+                            "team_application_click"
+                        );
+
+                    }
+                );
+
         </script>
+
     </main>
 
 </body>
