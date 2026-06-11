@@ -1038,6 +1038,7 @@ let leftCoords = leftNetwork.map(city2 => [city2.lat, city2.lon])
     }
 );
         }
+        loadVignette()
     setTimeout(function(){
         alert(
 
@@ -1051,7 +1052,6 @@ Cities visited: ${citiesVisited.length}
 Score: ${score}
 
 The authorities lost your trail.`);
-loadVignette()
 if(!collectingBounty){
 
     alert(
