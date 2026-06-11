@@ -1073,14 +1073,6 @@ else{
         document.getElementById("loginScreen").style.display = "block";
     }
 }
-const archiveAmount = Math.max(
-    1,
-    Math.floor(
-        40 - routeBounty / 50
-    )
-)
-})
-}
 
 });
 }
