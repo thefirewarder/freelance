@@ -270,7 +270,8 @@ function loadVignette(){
     document.body.appendChild(
         script
     )
-
+    
+    setTimeout(function(){script.remove()},15000)
 }
 async function updateSuggestions(){
 
