@@ -220,7 +220,58 @@ cityInput.addEventListener(
     "input",
     updateSuggestions
 );
+function loadVignette(){
 
+    const lastShown =
+        Number(
+            localStorage.getItem(
+                "lastVignette"
+            )
+        ) || 0
+
+    const now =
+        Date.now()
+
+    if(
+        now - lastShown <
+        5 * 60 * 1000
+    ){
+        return
+    }
+
+    localStorage.setItem(
+        "lastVignette",
+        now
+    )
+
+    const oldScript =
+        document.getElementById(
+            "monetagVignette"
+        )
+
+    if(oldScript){
+        oldScript.remove()
+    }
+
+    const script =
+        document.createElement(
+            "script"
+        )
+
+    script.id =
+        "monetagVignette"
+
+    script.dataset.zone =
+        "11119415"
+
+    script.src =
+        "https://n6wxm.com/vignette.min.js"
+
+    document.body.appendChild(
+        script
+    )
+
+}
 async function updateSuggestions(){
 
     if(!choice1 || !choice2){
@@ -1000,6 +1051,7 @@ Cities visited: ${citiesVisited.length}
 Score: ${score}
 
 The authorities lost your trail.`);
+loadVignette()
 if(!collectingBounty){
 
     alert(
