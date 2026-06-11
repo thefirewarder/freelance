@@ -271,7 +271,6 @@ function loadVignette(){
         script
     )
     
-    setTimeout(function(){script.remove()},15000)
 }
 async function updateSuggestions(){
 
