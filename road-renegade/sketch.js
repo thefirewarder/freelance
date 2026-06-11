@@ -1087,6 +1087,8 @@ alert(
 
 Build a chain of cities from start to finish.
 
+Type the city name, then the state abbreviation.
+
 Every city must be within your fuel range.
 
 Avoid states where you're wanted.
@@ -1094,6 +1096,6 @@ Avoid states where you're wanted.
 Visit all required detours.
 Use as few cities as possible for a higher score.`
 );
-let startMode = alert("Let's try an example. Try entering 'Hartford', as it is between the two cities you will have to get between, 'New York' and 'Boston'. After this tutorial, you can always refresh to play again!")
+let startMode = alert("Let's try an example. Try entering 'Hartfor CT', as it is between the two cities you will have to get between, 'New York' and 'Boston'. After this tutorial, you can always refresh to play again!")
 setTimeout(startGame, 500, true)
 }
