@@ -197,19 +197,19 @@ const majorCities = [
 {name:"New York, NY",lat:40.7128,lon:-74.0060},
 {name:"Los Angeles, CA",lat:34.0522,lon:-118.2437},
 {name:"Chicago, IL",lat:41.8781,lon:-87.6298},
-{name:"Houston, TX",lat:29.7604,lon:-95.3698},
 {name:"Phoenix, AZ",lat:33.4483,lon:-112.07404},
 {name:"Philadelphia, PA",lat:39.9526,lon:-75.1652},
-{name:"San Antonio, TX",lat:29.4241,lon:-98.4936},
 {name:"San Diego, CA",lat:32.7157,lon:-117.1611},
-{name:"Dallas, TX",lat:32.7767,lon:-96.7970},
 {name:"Jacksonville, FL",lat:30.3322,lon:-81.6557},
 {name:"Charlotte, NC",lat:35.11333,lon:-80.85361},
 {name:"Columbus, OH",lat:39.98333,lon:-82.98333},
 {name:"Denver, CO",lat:39.73923,lon:-104.99025},
 {name:"Seattle, WA",lat:47.60620,lon:-122.332069},
 {name:"Oklahoma City, OK",lat:35.481918,lon:-97.508469},
-{name:"Boston, MA",lat:42.361145,lon:-71.057083}
+{name:"Boston, MA",lat:42.361145,lon:-71.057083},
+{name:"San Antonio, TX",lat:29.4241,lon:-98.4936},
+{name:"Houston, TX",lat:29.7604,lon:-95.3698},
+{name:"Dallas, TX",lat:32.7767,lon:-96.7970},
 ];
 const citySuggestions =
     document.getElementById(
@@ -532,6 +532,7 @@ while(cityMarkers.length > 0){
 const cities =
     [...majorCities];
 
+
 const pointer =
     Math.floor(
         Math.random() *
@@ -644,6 +645,31 @@ for(
         1
     );
 
+}
+
+if(blocked.includes("Texas")){
+
+const pointer =
+    Math.floor(
+        Math.random() *
+        cities.length - 3
+    );
+
+choice1 =
+    cities[pointer];
+
+cities.splice(
+    pointer,
+    1
+);
+
+choice2 =
+    cities[
+        Math.floor(
+            Math.random() *
+            (cities.length - 3)
+        )
+    ];
 }
 
 directions.innerHTML =
