@@ -1052,6 +1052,7 @@ Score: ${score}
 
 The authorities lost your trail.`);
 loadVignette()
+    
 if(!collectingBounty){
 
     alert(
@@ -1074,7 +1075,7 @@ else{
     }
 }
 
-});
+},800);
 }
 
 function showTutorial(){
@@ -1095,4 +1096,6 @@ Use as few cities as possible for a higher score.`
 );
 let startMode = alert("Let's try an example. Try entering 'Hartford', as it is between the two cities you will have to get between, 'New York' and 'Boston'. After this tutorial, you can always refresh to play again!")
 setTimeout(startGame, 500, true)
+}
+})
 }
