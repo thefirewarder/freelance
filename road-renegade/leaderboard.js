@@ -34,16 +34,19 @@ snapshot.forEach(doc => {
   for(const tag of data.tags){
     switch(tag){
      case "very early":
-     tagEmojis += "🌅"
+     tagEmojis += "⋙🌅 "
+     break
+     case "early":
+     tagEmojis += "🌅 "
      break
      case "founder":
-     tagEmojis += "👑"
+     tagEmojis += "👑 "
      break
      case "team member":
-     tagEmojis += "🔨"
+     tagEmojis += "🔨 "
      break
      case "bug hunter":
-     tagEmojis += "🐞"
+     tagEmojis += "🐞 "
      break
     }
   }
