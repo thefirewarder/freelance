@@ -37,7 +37,7 @@ snapshot.forEach(doc => {
      tagEmojis += "🌅"
      break
      case "founder":
-     tagEmojis += "⭐️"
+     tagEmojis += "👑"
      break
      case "team member":
      tagEmojis += "👥"
