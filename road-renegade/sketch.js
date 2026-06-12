@@ -121,8 +121,7 @@ else{
             {
                 alias,
                 bounty: 0,
-                artifactsFound: 0,
-                treasures: 0
+                tags: [],
             }
         );
 document.getElementById("aliasScreen").style.display = "none"
